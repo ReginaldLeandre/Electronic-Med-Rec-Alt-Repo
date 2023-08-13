@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../sever');
 var debug = require('debug')('electronic-medical-record:server');
 var http = require('http');
 
