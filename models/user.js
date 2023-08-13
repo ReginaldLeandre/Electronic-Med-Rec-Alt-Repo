@@ -4,8 +4,12 @@ const Schema = mongoose.Schema;
 
 
 const userSchema = new Schema( {
-    name: String,
-    role: String,
+    name: {
+        type: String
+    },
+    role: {
+        type: String
+    }
     // userId: Schema.Types.ObjectId
     // googleID: type: String, required: true (step 8.3)
  },

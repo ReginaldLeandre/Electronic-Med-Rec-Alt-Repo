@@ -4,13 +4,34 @@ const Schema = mongoose.Schema;
 
 
 const vitalSchema = new Schema( {
-    heartRate: Number,
-    systolic: Number,
-    diastolic: Number,
-    respirations: Number,
-    oxygenSat: Number,
-    temp: Number,
-    time: String
+    heartRate: {
+      type: Number,
+      min: 0,
+    },
+    systolic: {
+      type: Number,
+      min: 0
+    },
+    diastolic: {
+      type: Number,
+      min: 0
+    },
+    respirations: {
+      type: Number,
+      min: 0
+    },
+    oxygenSat: {
+      type: Number,
+      min: 0,
+      max: 100
+    },
+    temp: {
+      type: Number,
+      min: 0
+    },
+    time: {
+      type: Date,
+    }
   },
   {
     timestamps: true,
@@ -19,11 +40,23 @@ const vitalSchema = new Schema( {
 
 
 const patientSchema = new Schema( {
-    name: String,
-    DOB: Date,
-    medHx: [String],
-    chiefComplaint: String,
-    providers: [{type: Schema.Types.ObjectId, ref: "User"}],
+    name: {
+      type: String,
+    },
+    DOB: {
+      type: Date
+    },
+    medHx: {
+      type: [String]
+    },
+    chiefComplaint: {
+      type: String
+    },
+    providers: [{
+      type: Schema.Types.ObjectId, 
+      ref: "User"
+      
+    }],
     vitals: [vitalSchema]
 },
 {
