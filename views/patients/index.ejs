@@ -1,3 +1,28 @@
 
-<p> <%= title %> </p>
+<%- include('../partials/header') %>
 
+
+<table id="list">
+    <thead>
+      <tr>
+        <th>Name:</th>
+        <th>DOB:</th>
+        <th>Chief Complaint:</th>
+        <th>ID:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% patients.forEach(function(p) { %>
+        <tr>
+          <td><%= p.name %></td>
+          <br>
+          <td><%= p.DOB %></td>
+          <td><%= p.chiefComplaint %></td>
+          <td><%= p._id %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+
+<%- include('../partials/footer') %>

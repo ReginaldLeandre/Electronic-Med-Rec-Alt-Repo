@@ -6,3 +6,25 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.nav {
+  display: flex;
+  justify-content: flex-start;
+  margin: auto;
+
+}
+
+
+#login {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  
+}
+
+
+#list {
+  display: flex;
+  justify-content: space-evenly;
+}
