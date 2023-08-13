@@ -57,7 +57,11 @@ const patientSchema = new Schema( {
       ref: "User"
       
     }],
-    vitals: [vitalSchema]
+    vitals: [vitalSchema],
+    discharged: {
+      type: Boolean,
+      default: false,
+    }
 },
 {
     timestamps: true,

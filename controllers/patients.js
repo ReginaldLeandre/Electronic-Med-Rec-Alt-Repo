@@ -10,7 +10,7 @@ module.exports = {
 async function index (req, res, next) {
 
     try {
-        const results = await Patient.find({});
+        const results = await Patient.find({discharged: false});
         res.render('patients/index', { title: "All Patients", patients: results })
     } catch (err) {
         console.log(err.message);
