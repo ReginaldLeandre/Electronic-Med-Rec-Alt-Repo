@@ -28,14 +28,14 @@ async function addOnePatient(data) {
     process.exit()
 }
 
-const patient2 = {
-    name: "Jane Doe",
+const patient3 = {
+    name: "Alex Doe",
     DOB: new Date(),
     medHx: ["T2DM, AKF"],
-    chiefComplaint: "AKF",
+    chiefComplaint: "T2DM",
 }
 
-addOnePatient(patient2)
+addOnePatient(patient3)
 
 // const patientSchema = new Schema( {
 //     name: {

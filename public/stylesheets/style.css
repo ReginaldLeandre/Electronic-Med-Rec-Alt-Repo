@@ -7,12 +7,23 @@ a {
   color: #00B7FF;
 }
 
+table, th, td {
+  border-collapse: collapse;
+}
 
 .nav {
   display: flex;
   justify-content: flex-start;
   margin: auto;
+}
 
+.list {
+  border: 1px solid black;
+}
+
+.list th, td{
+  width: 250px;
+  border: 1px solid black;
 }
 
 
@@ -23,6 +34,10 @@ a {
   
 }
 
+#footer {
+  position: absolute;
+  bottom: 0;
+}
 
 /* #list {
   display: flex;
