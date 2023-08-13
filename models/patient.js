@@ -30,7 +30,7 @@ const vitalSchema = new Schema( {
       min: 0
     },
     time: {
-      type: String,
+      type: Date,
     }
   },
   {
