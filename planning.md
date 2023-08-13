@@ -1,21 +1,24 @@
 
-Project Title: Wavelengths EMR
+# Project Title: Wavelengths EMR
 
-Project Summary: We plan to create a simple but highly functional electronic medical record system that could be implemented at a small urgent care center or emergency room. Our user experience is both provider- and patient-centric, creating a logical organizational structure that will help streamline workflow for providers and facilitate a more integrated care-delivery system for each patient. 
+## Project Summary
+We plan to create a simple but highly functional electronic medical record system that could be implemented at a small urgent care center or emergency room. Our user experience is both provider- and patient-centric, creating a logical organizational structure that will help streamline workflow for providers and facilitate a more integrated care-delivery system for each patient. 
 
-Team and Primary/Lead Roles:
+## Team and Primary/Lead Roles:
 
-Roles: 
+### Roles: 
 - frontend - Reggie(Will/Rob)
 - backend - Will(reggie/rob)
 - git wrangler - Will
 - design lead - Rob(Will/reggie)	 
 - research / documentation lead - Reggie/Will/Rob
 
-Link to Github Repo : william-hu-codes/electronic-medical-record: SEIR PRoject 3 (github.com)
-Link To Trello: Wavelength: The EMR Project | Trello
+[Link to GitHub Repo](https://github.com/william-hu-codes/electronic-medical-record)
 
-Wireframe: (images below)
+[Link to Trello Board](https://trello.com/b/GvMYnnYL/wavelength-the-emr-project)
+
+
+## Wireframe: (images below)
 ​​
 ![image](https://github.com/william-hu-codes/electronic-medical-record/assets/138035971/a2bf3bf1-7a82-4aaf-93bf-43b7286806fa)
 
@@ -39,10 +42,9 @@ This page, accessible from the nav bar, shows a list of all patients in the heal
 
 The show page for an individual patient will have their information (determined upon adding them to the database when a new patient is created). Here, the vitals schema will also populate, which is embedded within patients in a one-to-many relationship, since a patient may have multiple vital sign checks that will populate (the same way a movie may have multiple reviews added over time). Here, the list of providers assigned (linked many-to-many) will also be listed for that patient.
 
+## Models/Schema
 
-
-
-Primary Model / Schema
+### Primary Model / Schema
 Patient
 fullName: String
 _id: Objectid
@@ -53,7 +55,7 @@ providers: [{type: Schema.Types.ObjectId, ref: User“}]
 vitals: Embedded vitals schema subdocs
 
 
-Secondary Model / Schema 
+### Secondary Model / Schema 
 User (provider - but named user for simplicity when implementing OAuth)
 fullName: String
 _id: Objectid
@@ -62,9 +64,7 @@ userId: Schema.Types.ObjectId
 googleID: type: String, required: true (step 8.3)
 
 
-
-
-Secondary Model / Schema 
+### Secondary Model / Schema 
 Vitals
 heartRate: Number
 _id: Objectid
@@ -77,26 +77,26 @@ time(?)
 
 
 
-MVP CRUD / Restful routes
+## MVP CRUD / Restful routes
 
 ![image](https://github.com/william-hu-codes/electronic-medical-record/assets/138035971/764aac54-401e-4f34-b566-69bfa323e560)
 
 ![image](https://github.com/william-hu-codes/electronic-medical-record/assets/138035971/f0136a3c-91a2-42d3-aaf7-24561a344f62)
 
 
-ERD:
+### ERD:
 
 ![image](https://github.com/william-hu-codes/electronic-medical-record/assets/138035971/51fbc9c1-2152-4aa4-98e7-f2623278dc5d)
 
 
 
-User Story / Template
+## User Story / Template
 
 
-The user story is
- best seen when viewing the wireframe of all pages above. In summary, imagine you are the hospital administration or a healthcare provider in an emergency room or urgent care center. Patients will be added to the database of admitted patients at the center and removed when discharged. Multiple healthcare providers--doctors, nurses, techs, etc--may be involved in a given patient’s care. With our EMR app, you can view all providers “on-shift” and navigate the app to see which providers are assigned to a given patient and which patients are assigned to a given provider. Patient information may be edited within the patient-specific page. As a stretch goal, edits will only be possible to make when signed in (likely with Google).
+### User Story
+The user story is best seen when viewing the wireframe of all pages above. In summary, imagine you are the hospital administration or a healthcare provider in an emergency room or urgent care center. Patients will be added to the database of admitted patients at the center and removed when discharged. Multiple healthcare providers--doctors, nurses, techs, etc--may be involved in a given patient’s care. With our EMR app, you can view all providers “on-shift” and navigate the app to see which providers are assigned to a given patient and which patients are assigned to a given provider. Patient information may be edited within the patient-specific page. As a stretch goal, edits will only be possible to make when signed in (likely with Google).
 
-LIST OF USER STORIES:
+### LIST OF USER STORIES:
 
 As a user, need to view all patients
 As a user, need to view all providers
@@ -106,8 +106,12 @@ As a user, need to create new vitals for patient
 As a user, need a mean of discharging patients, preventing them from being rendered on the default patients index page
 As a user, need to be able to view former (discharged) patients by applying a search filter (using a GET req.query from a form)
 
-Optional - Potential Stretch Goals
+[REFER TO TRELLO BOARD FOR UPDATED LIST](https://trello.com/b/GvMYnnYL/wavelength-the-emr-project)
+
+### Optional - Potential Stretch Goals
 - log in - ability to edit patient info may be restricted to only if user is logged on
 - possibly an option to have multiple “teams” of providers (would need a separate model)
 - anticipate additional embedded schemas aside from just vitals (can imagine also having physical exam, labs, imaging, additional history, etc)
 - patient portal where patients can have limited access to their own medical records (view only)
+
+[REFER TO TRELLO BOARD FOR UPDATED LIST](https://trello.com/b/GvMYnnYL/wavelength-the-emr-project)
