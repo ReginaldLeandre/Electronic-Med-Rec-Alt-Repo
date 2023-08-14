@@ -4,14 +4,14 @@ const User = require("../models/user");
 module.exports = {
     index,
     show,
-    
+
 }
 
 
 async function index (req, res, next) {
 
     try {
-        const results = await Patient.find({discharged: false});
+        const results = await Patient.find({discharged: false}).sort("name");
         res.render('patients/index', { 
             title: "All Patients", 
             patients: results 
