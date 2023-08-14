@@ -14,4 +14,6 @@ router.get("/:userId", usersCtrl.show)
 
 router.post("/:userId", usersCtrl.addToProvider)
 
+router.put("/:userId", usersCtrl.removeFromProvider)
+
 module.exports = router;
