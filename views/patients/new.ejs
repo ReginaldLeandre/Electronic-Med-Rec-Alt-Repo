@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+  <title>Add New Patient</title>
+</head>
+<body>
+  
+  <form id="new-patient-form" action="/patients" method="post">
+    <label for="name">Name: <input type="text" id="name" name="name" required></label>
+    <br>
+
+    <label for="DOB">Date of Birth: <input type="date" id="DOB" name="DOB" required>
+    </label>
+    <br>
+
+    <label for="chiefComplaint">Chief Complaint: 
+        <input type="text" id="chiefComplaint" name="chiefComplaint" required>
+    </label>
+    <br>
+
+    <label for="medHx">Medical History: 
+        <input type="text" id="medHx" name="medHx">
+    </label>
+    <br>
+
+    <button type="submit">Add Patient</button>
+  </form>
+  
+
+
+  <%- include('../partials/footer') %>
