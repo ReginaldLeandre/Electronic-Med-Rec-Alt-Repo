@@ -19,8 +19,14 @@
       <h3>Assigned Patients</h3>
       <ul>
         <% patients.forEach(p=>{%>
-          <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a></li>
+          <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a>
+        
+            
+            <button>Unassign Patient</button></li>
+
+
         <% })%>
+
       </ul>
       <!-- iterate over all the of the cast values in this movies cast [] if there are object ids stored -->
     </div>
@@ -40,6 +46,7 @@
     </div>
     <br>
 </form>
+
 </section>
 
 </div>
