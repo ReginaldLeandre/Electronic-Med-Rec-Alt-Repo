@@ -10,5 +10,4 @@ router.get('/', patientsCtrl.index)
 
 router.get("/:patientId", patientsCtrl.show)
 
-
 module.exports = router;

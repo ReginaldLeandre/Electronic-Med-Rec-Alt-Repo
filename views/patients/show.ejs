@@ -13,7 +13,54 @@
     <p><%= patient.providers %></p>
 </div>
 
-<h2>Vital Signs</h2>
 
+<h2>Vital Signs</h2>
+<div id="vitals-main-container">
+    <div class="vitals-container">
+        <p><strong>Time</strong></p>
+        <p><strong>Heart Rate</strong></p>
+        <p><strong>Blood Pressure</strong></p>
+        <p><strong>Respirations</strong></p>
+        <p><strong>O2 Saturation</strong></p>
+        <p><strong>Temperature</strong></p>
+    </div>
+        <% patient.vitals.forEach(function(v) { %>
+            <div class="vitals-container">
+                <p><%= v.time %></p>
+
+                <p
+                <% if (v.heartRate > 100 || v.heartRate <80) { %>
+                    class="abnormal-vitals"
+                <% } %>
+                ><%= v.heartRate %></p>
+
+                <p
+                <% if (v.systolic < 100 || v.systolic > 140 || v.diastolic <60 || v.diastolic > 100) { %>
+                    class="abnormal-vitals"
+                <% } %>
+                ><%= v.systolic %> / <%= v.diastolic %></p>
+
+                <p
+                <% if (v.respirations < 12 || v.respirations > 20) { %>
+                    class="abnormal-vitals"
+                <% } %>
+                ><%= v.respirations %></p>
+
+                <p
+                <% if (v.oxygenSat < 92) { %>
+                    class="abnormal-vitals"
+                <% } %>
+                ><%= v.oxygenSat %>%</p>
+
+                <p
+                <% if (v.temp < 36 || v.temp > 38) { %>
+                    class="abnormal-vitals"
+                <% } %>
+                ><%= v.temp %>°</p>
+            </div>
+        <% }) %>
+</div>
+
+<a href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a>
 
 <%- include('../partials/footer') %>
