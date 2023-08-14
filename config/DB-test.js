@@ -97,7 +97,7 @@ async function deleteAllPatients() {
     process.exit()
 }
 
-// deleteAllPatients()
+deleteAllPatients()
 
 
 
