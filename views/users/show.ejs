@@ -42,11 +42,7 @@
     <option value="<%=p._id%>"><%= p.name %> | DOB:  <%= p.DOB.toLocaleDateString() %> | <%= p._id %></option>
     <%})%>
     <option selected disabled>
-      <% if (availableOptions.length > 0) { %>
-        Select Patient
-      <% } else { %>
-        No patients available
-      <% } %>
+      <%= availableOptions.length ? "Select Patient" : "No available patients" %>
     </option>
   </select>
     <div>
