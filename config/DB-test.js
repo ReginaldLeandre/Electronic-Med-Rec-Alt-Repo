@@ -39,6 +39,26 @@ const patient2 = {
 }
 
 
+const patient3 = {
+    name: "Patient Test with provider",
+    DOB: new Date(),
+    medHx: ["T2DM, AKF"],
+    chiefComplaint: "T2DM",
+    discharged: false,
+    providers: ["64da409988fbb708f00dd52a"]
+}
+
+
+const patient4 = {
+    name: "Patient Test with two providers (named test and test2)",
+    DOB: new Date(),
+    medHx: ["T2DM, AKF"],
+    chiefComplaint: "T2DM",
+    discharged: false,
+    providers: ["64da409988fbb708f00dd52a", "64da44c0569f5e942c2ebd6f"]
+}
+
+
 const user1 = {
     name: "Will",
     role: "nurse"
@@ -65,7 +85,7 @@ async function addOneUser(data) {
 
 
 
-// addOnePatient(patient2)
+// addOnePatient(patient4)
 
 async function deleteAllPatients() {
     try {

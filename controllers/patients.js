@@ -4,7 +4,6 @@ const User = require("../models/user");
 module.exports = {
     index,
     show,
-
 }
 
 
@@ -36,3 +35,4 @@ async function show (req, res, next) {
         next(Error(err))
     }
 }
+
