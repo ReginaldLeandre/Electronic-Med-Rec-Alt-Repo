@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+
+<div id="user-show-grid">
+    <h3>Name:</h3>
+    <p><%= user.name %></p>
+    <h3>Role:</h3>
+    <p><%= user.role %></p>
+</div>
+
+
+<section>
+
+    <div>
+      <h2>Assigned Patients</h2>
+      <ul>
+        <% patients.forEach(p=>{%>
+          <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a></li>
+        <% })%>
+      </ul>
+      <!-- iterate over all the of the cast values in this movies cast [] if there are object ids stored -->
+    </div>
+
+</section>
+
+
+
+<%- include('../partials/footer') %>

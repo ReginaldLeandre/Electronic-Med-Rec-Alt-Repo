@@ -55,6 +55,20 @@ table, th, td {
   height: 20px;
 }
 
+
+#user-show-grid {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-collapse: collapse;
+  border: 1px solid black;
+  
+}
+
+#user-show-grid h3, p {
+  height: 15px;
+}
+
 .WavelengthsClass {
   display: flex;
   justify-content: center; 
@@ -74,3 +88,4 @@ body {
   margin: auto;
   background-color: rgba(255, 255, 255, 0.8);
 }
+

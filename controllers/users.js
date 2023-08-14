@@ -4,8 +4,8 @@ const User = require("../models/user");
 module.exports = {
     index,
     new: addUser,
-    create: createUser
-
+    create: createUser,
+    show
 }
 
 
@@ -13,12 +13,37 @@ module.exports = {
 async function index (req, res, next) {
     try {
         const results = await User.find({ });
+        console.log(results)
         res.render('users/index', { title: "All Providers", users: results })
     } catch (err) {
         console.log(err.message);
         next (Error(err))
     }
 
+}
+
+
+async function show (req, res, next) {
+    try {
+
+        console.log("trying to find all Patients")
+
+        const user  = await User.findOne({_id: req.params.userId})
+
+        const allPatients = await Patient.find({ providers: user._id })
+
+        console.log("looking for all matching patients", allPatients)
+
+        console.log(user)
+        res.render("users/show", {
+            title: user.name,
+            user,
+            patients: allPatients
+        })
+    }catch(err) {
+        console.log(err)
+        next(Error(err))
+    }
 }
 
 

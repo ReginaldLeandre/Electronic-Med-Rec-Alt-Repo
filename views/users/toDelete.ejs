@@ -1,0 +1,27 @@
+
+<h2>Assign Patient to Proider <%= user.name %> </h2>
+<form method="POST" action="/users/<%=user._id%>/patients">
+  <select name="patientId">
+    <% patients.forEach(p =>{%>
+    <option value="<%=p._id%>"><%= p.name %> | <%= p.DOB.toLocaleDateString() %></option>
+    <%})%>
+  </select>
+  <input type="submit" value="Assign Patient" />
+</form>
+</section>
+
+
+
+<section>
+    <% if(patient.providers.length){%>
+    <div>
+      <h2>Assigned Patients</h2>
+      <ul>
+        <% patient.providers.forEach(p=>{%>
+          <li><%=p.name%> - <small><%= `${p.DOB.toLocaleDateString()}` %></small></li>
+        <% })%>
+      </ul>
+      <!-- iterate over all the of the cast values in this movies cast [] if there are object ids stored -->
+    </div>
+    <% } %>
+</section>
