@@ -31,6 +31,7 @@ const vitalSchema = new Schema( {
     },
     time: {
       type: Date,
+      default: returnDate()
     }
   },
   {
@@ -38,6 +39,9 @@ const vitalSchema = new Schema( {
   }
 );
 
+function returnDate() {
+  return new Date()
+}
 
 const patientSchema = new Schema( {
     name: {
@@ -55,7 +59,6 @@ const patientSchema = new Schema( {
     providers: [{
       type: Schema.Types.ObjectId, 
       ref: "User"
-      
     }],
     vitals: [vitalSchema],
     discharged: {

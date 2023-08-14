@@ -42,9 +42,59 @@ table, th, td {
   bottom: 0;
 }
 
-/* #list {
+#patients-show-grid {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-collapse: collapse;
+  border: 1px solid black;
+  
+}
+
+#patients-show-grid h3, p {
+  height: 20px;
+}
+
+
+
+#user-show-grid {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-collapse: collapse;
+  border: 1px solid black;
+  
+}
+
+#user-show-grid h3, p {
+  height: 15px;
+}
+
+#assigned-patients-grid {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-collapse: collapse;
+  border: 1px solid black;
+  
+}
+
+#assigned-patients-grid h3, p {
+  height: 15px;
+}
+
+#vitals-main-container {
+  background-color: rgba(255, 255, 255, 0.8);
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  height: 400px;
+}
+
+
+
+/* #vitals-main-container div {
+  display: flex;
+  flex-direction: column;
 } */
 
 
@@ -54,7 +104,11 @@ table, th, td {
   align-items: flex-start;
 }
 
-
+.vitals-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
 
 body {
   background-image: url("../medicalBackground.jpg");
@@ -71,6 +125,7 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+
 .IndexAddPatient{
   position: fixed;
   bottom: 0;
@@ -78,3 +133,9 @@ body {
   justify-content: center; 
   align-items: center;
 }
+
+.abnormal-vitals {
+  color: red;
+  font-weight: bold;
+}
+

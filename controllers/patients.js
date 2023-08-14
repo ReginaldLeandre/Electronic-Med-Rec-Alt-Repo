@@ -4,20 +4,25 @@ const User = require("../models/user");
 module.exports = {
     index,
     new: addPatient,
-    create: createPatient
+    create: createPatient,
+    show
 }
 
 
 async function index (req, res, next) {
 
     try {
-        const results = await Patient.find({discharged: false});
-        res.render('patients/index', { title: "All Patients", patients: results })
+        const results = await Patient.find({discharged: false}).sort("name");
+        res.render('patients/index', { 
+            title: "All Patients", 
+            patients: results 
+        })
     } catch (err) {
-        console.log(err.message);
+        console.log(err);
         next (Error(err))
     }
 }
+
 
 
  function addPatient(req, res, next) {
@@ -49,3 +54,20 @@ async function createPatient(req, res, next) {
         next (Error(err));
       }
 }
+
+
+async function show (req, res, next) {
+    try {
+        const patient  = await Patient.findOne({_id: req.params.patientId})
+        // res.send(patient)
+        // console.log(patient)
+        res.render("patients/show", {
+            title: patient.name,
+            patient
+        })
+    }catch(err) {
+        console.log(err)
+        next(Error(err))
+    }
+}
+

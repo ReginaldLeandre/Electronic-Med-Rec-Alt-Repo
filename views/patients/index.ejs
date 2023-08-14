@@ -14,11 +14,10 @@
     <tbody>
       <% patients.forEach(function(p) { %>
         <tr>
-          <td><%= p.name %></td>
-          <br>
-          <td><%= p.DOB.toLocaleDateString() %></td>
-          <td><%= p.chiefComplaint %></td>
-          <td><%= p._id %></td>
+          <td><a href="patients/<%= p._id %>"><%= p.name %></a></td>
+          <td><a href="patients/<%= p._id %>"><%= p.DOB.toLocaleDateString() %></a></td>
+          <td><a href="patients/<%= p._id %>"><%= p.chiefComplaint %></a></td>
+          <td><a href="patients/<%= p._id %>"><%= p._id %></a></td>
         </tr>
         <% }); %>
       </tbody>

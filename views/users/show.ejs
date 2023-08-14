@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+
+<div id="user-show-grid">
+    <h3>Name:</h3>
+    <p><%= user.name %></p>
+    <h3>Role:</h3>
+    <p><%= user.role %></p>
+</div>
+
+
+<br>
+<br>
+
+<div id="assigned-patients-grid">
+
+<section>
+    <div>
+      <h3>Assigned Patients</h3>
+      <ul>
+        <% patients.forEach(p=>{%>
+          <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a></li>
+        <% })%>
+      </ul>
+      <!-- iterate over all the of the cast values in this movies cast [] if there are object ids stored -->
+    </div>
+
+    <br>
+
+    <h4>Select a patient to add to patient assignments for <%= user.name %>:</h4>
+<form method="POST" action="/users/<%=user._id%>">
+  <select name="patientId">
+    <% allPatients.forEach(p =>{%>
+    <option value="<%=p._id%>"><%= p.name %> | DOB:  <%= p.DOB.toLocaleDateString() %></option>
+    <%})%>
+  </select>
+    <div>
+        <br>
+        <input type="submit" value="Assign Patient" />
+    </div>
+    <br>
+</form>
+</section>
+
+</div>
+
+</section>
+
+
+<%- include('../partials/footer') %>
+

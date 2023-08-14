@@ -4,9 +4,14 @@ var router = express.Router();
 const usersCtrl = require('../controllers/users')
 
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', usersCtrl.index)
+
+router.get('/new', usersCtrl.new)
+
+router.post("/", usersCtrl.create)
+
+router.get("/:userId", usersCtrl.show)
+
+router.post("/:userId", usersCtrl.addToProvider)
 
 module.exports = router;
