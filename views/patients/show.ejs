@@ -13,7 +13,14 @@
     <p><%= patient.providers %></p>
 </div>
 
-<h2>Vital Signs</h2>
 
+<h2>Vital Signs</h2>
+<div class="vitals-main-container">
+    <div class="vitals-container">
+
+    </div>
+</div>
+
+<a href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a>
 
 <%- include('../partials/footer') %>
