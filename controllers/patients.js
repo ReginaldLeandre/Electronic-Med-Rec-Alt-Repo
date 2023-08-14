@@ -3,7 +3,7 @@ const User = require("../models/user");
 
 module.exports = {
     index,
-    show
+    show,
 
 }
 
@@ -11,7 +11,7 @@ module.exports = {
 async function index (req, res, next) {
 
     try {
-        const results = await Patient.find({discharged: false});
+        const results = await Patient.find({discharged: false}).sort("name");
         res.render('patients/index', { 
             title: "All Patients", 
             patients: results 
@@ -26,7 +26,7 @@ async function show (req, res, next) {
     try {
         const patient  = await Patient.findOne({_id: req.params.patientId})
         // res.send(patient)
-        console.log(patient)
+        // console.log(patient)
         res.render("patients/show", {
             title: patient.name,
             patient
