@@ -33,13 +33,15 @@ async function index (req, res, next) {
 
 
 
+
 async function createPatient(req, res, next) {
 
     try {
-        // const { name, DOB, chiefComplaint, medHx } = req.body;
-        // const newPatient = new Patient({ name, DOB, chiefComplaint, medHx });
-        const newPatient = {...req.body}
-        await Patient.create(newPatient)
+        const { name, DOB, chiefComplaint, medHx } = req.body;
+        const newPatient = new Patient({ name, DOB, chiefComplaint, medHx });
+        await newPatient.save();
+        // const newPatient = {...req.body}
+        // await Patient.create(newPatient)
         console.log("Patient added Successfully!");
         res.redirect('/patients');
       } catch (error) {
