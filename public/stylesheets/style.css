@@ -58,6 +58,7 @@ table, th, td {
 
 body {
   background-image: url("../medicalBackground.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
@@ -68,4 +69,12 @@ body {
   width: fit-content;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.IndexAddPatient{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }
