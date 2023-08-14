@@ -38,8 +38,10 @@ table, th, td {
 }
 
 #footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  color: white; /* Set the text color to white */
 }
 
 #patients-show-grid {
@@ -114,6 +116,7 @@ body {
   background-image: url("../medicalBackground.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
  .table-container{
