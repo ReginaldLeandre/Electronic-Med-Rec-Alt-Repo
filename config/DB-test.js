@@ -6,6 +6,8 @@ require('./database')
 
 // import model - Patient
 const Patient = require("../models/patient");
+const User = require("../models/user");
+
 
 // false data
 const vitals1 = {
@@ -36,7 +38,34 @@ const patient2 = {
     discharged: true
 }
 
-addOnePatient(patient2)
+
+const user1 = {
+    name: "Will",
+    role: "nurse"
+}
+
+const user2 = {
+    name: "Rob",
+    role: "renal fellow"
+}
+
+
+
+// addOneUser(user2)
+
+async function addOneUser(data) {
+    try {
+        const newUser = await User.create(data)
+        console.log(newUser)
+    }catch(err) {
+        console.log(err)
+    }
+    process.exit()
+}
+
+
+
+// addOnePatient(patient2)
 
 async function deleteAllPatients() {
     try {
@@ -50,3 +79,17 @@ async function deleteAllPatients() {
 
 // deleteAllPatients()
 
+
+
+async function deleteAllUsers() {
+    try {
+        await User.deleteMany({})
+        console.log("deleted all users")
+    }catch(err) {
+        console.log(err)
+    }
+    process.exit()
+}
+
+
+// deleteAllUsers()

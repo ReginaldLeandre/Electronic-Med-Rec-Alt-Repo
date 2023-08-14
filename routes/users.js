@@ -4,9 +4,15 @@ var router = express.Router();
 const usersCtrl = require('../controllers/users')
 
 
+router.get('/', usersCtrl.index)
+
+router.get('/new', usersCtrl.new)
+
+router.post("/", usersCtrl.create)
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
 
 module.exports = router;
