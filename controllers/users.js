@@ -1,4 +1,3 @@
-const patient = require("../models/patient");
 const Patient = require("../models/patient");
 const User = require("../models/user");
 
@@ -37,21 +36,21 @@ async function show (req, res, next) {
 
         const allPatients = await Patient.find({  })
 
-        // console.log("looking for all matching patients", allPatients)
+        const availableOptions = await Patient.find({providers: {$ne: user._id}})
 
         // console.log(user)
         res.render("users/show", {
             title: user.name,
             user,
             patients: allPatientsAssigned,
-            allPatients
+            allPatients,
+            availableOptions
         })
     }catch(err) {
         console.log(err)
         next(Error(err))
     }
 }
-
 
 function addUser (req, res, next) {
     res.render("users/new", { title: "Add Provider"} )

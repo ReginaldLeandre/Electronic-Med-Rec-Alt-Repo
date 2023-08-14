@@ -38,9 +38,16 @@
     <h4>Select a patient to add to patient assignments for <%= user.name %>:</h4>
 <form method="POST" action="/users/<%=user._id%>">
   <select name="patientId">
-    <% allPatients.forEach(p =>{%>
-    <option value="<%=p._id%>"><%= p.name %> | DOB:  <%= p.DOB.toLocaleDateString() %></option>
+    <% availableOptions.forEach(p =>{%>
+    <option value="<%=p._id%>"><%= p.name %> | DOB:  <%= p.DOB.toLocaleDateString() %> | <%= p._id %></option>
     <%})%>
+    <option selected disabled>
+      <% if (availableOptions.length > 0) { %>
+        Select Patient
+      <% } else { %>
+        No patients available
+      <% } %>
+    </option>
   </select>
     <div>
         <br>
