@@ -8,6 +8,6 @@ const vitalsCtrl = require('../controllers/vitals')
 
 router.get("/patients/:patientId/vitals/new", vitalsCtrl.newVitals)
 
-// router.post("/:patientId", vitalsCtrl.createVitals)
+router.post("/patients/:patientId", vitalsCtrl.createVitals)
 
 module.exports = router;
