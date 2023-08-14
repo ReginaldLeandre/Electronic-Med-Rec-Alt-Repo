@@ -10,4 +10,7 @@ router.get("/patients/:patientId/vitals/new", vitalsCtrl.newVitals)
 
 router.post("/patients/:patientId", vitalsCtrl.createVitals)
 
+router.delete("/patients/:patientId/vitals/:vitalId", vitalsCtrl.delete)
+
 module.exports = router;
+

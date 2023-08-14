@@ -60,9 +60,9 @@
                 ><%= v.temp %>°</p>
                 
                 <p>
-                    <form action="/patients/<%= patient._id%>/vitals/?_method=DELETE" method="POST">
-                    <button type="submit" class="delete-button">DELETE</button>
-                </form>
+                    <form action="/patients/<%= patient._id %>/vitals/<%= v._id %>/?_method=DELETE" method="POST">
+                        <button type="submit" class="delete-button">DELETE</button>
+                    </form>
                 </p>
             </div>
         <% }) %>
