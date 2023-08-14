@@ -90,10 +90,8 @@ async function addToProvider (req, res, next) {
             res.redirect(`/users/${providerId}`)
 
 
-            
         }catch (err){
             console.log(err)
             res.redirect('/')
         }
-
     }

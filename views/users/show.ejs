@@ -9,24 +9,14 @@
 </div>
 
 
+<br>
+<br>
 
-<h2>Assign Patient to Proider <%= user.name %> </h2>
-<form method="POST" action="/users/<%=user._id%>">
-  <select name="patientId">
-    <% allPatients.forEach(p =>{%>
-    <option value="<%=p._id%>"><%= p.name %> | <%= p.DOB.toLocaleDateString() %></option>
-    <%})%>
-  </select>
-  <input type="submit" value="Assign Patient" />
-</form>
-</section>
-
-
+<div id="assigned-patients-grid">
 
 <section>
-
     <div>
-      <h2>Assigned Patients</h2>
+      <h3>Assigned Patients</h3>
       <ul>
         <% patients.forEach(p=>{%>
           <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a></li>
@@ -35,8 +25,26 @@
       <!-- iterate over all the of the cast values in this movies cast [] if there are object ids stored -->
     </div>
 
+    <br>
+
+    <h4>Select a patient to add to patient assignments for <%= user.name %>:</h4>
+<form method="POST" action="/users/<%=user._id%>">
+  <select name="patientId">
+    <% allPatients.forEach(p =>{%>
+    <option value="<%=p._id%>"><%= p.name %> | DOB:  <%= p.DOB.toLocaleDateString() %></option>
+    <%})%>
+  </select>
+    <div>
+        <br>
+        <input type="submit" value="Assign Patient" />
+    </div>
+    <br>
+</form>
 </section>
 
+</div>
+
+</section>
 
 
 <%- include('../partials/footer') %>

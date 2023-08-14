@@ -69,6 +69,19 @@ table, th, td {
   height: 15px;
 }
 
+#assigned-patients-grid {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-collapse: collapse;
+  border: 1px solid black;
+  
+}
+
+#assigned-patients-grid h3, p {
+  height: 15px;
+}
+
 .WavelengthsClass {
   display: flex;
   justify-content: center; 
