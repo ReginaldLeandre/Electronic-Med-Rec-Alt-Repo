@@ -30,7 +30,9 @@ async function show (req, res, next) {
 
         const user  = await User.findOne({_id: req.params.userId})
 
-        const allPatients = await Patient.find({ providers: user._id })
+        const allPatientsAssigned = await Patient.find({ providers: user._id })
+
+        const allPatients = await Patient.find({  })
 
         console.log("looking for all matching patients", allPatients)
 
@@ -38,7 +40,8 @@ async function show (req, res, next) {
         res.render("users/show", {
             title: user.name,
             user,
-            patients: allPatients
+            patients: allPatientsAssigned,
+            allPatients
         })
     }catch(err) {
         console.log(err)
