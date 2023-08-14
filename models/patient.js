@@ -55,7 +55,6 @@ const patientSchema = new Schema( {
     providers: [{
       type: Schema.Types.ObjectId, 
       ref: "User"
-      
     }],
     vitals: [vitalSchema],
     discharged: {

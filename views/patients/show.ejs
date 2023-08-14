@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div id="patients-show-grid">
+    <h3>Name:</h3>
+    <p><%= patient.name %></p>
+    <h3>Date of Birth (yyyy-mm-dd):</h3>
+    <p><%= patient.DOB.toLocaleDateString() %></p>
+    <h3>Chief Complaing:</h3>
+    <p><%= patient.chiefComplaint %></p>
+    <h3>Medical History:</h3>
+    <p><%= patient.medHx %></p>
+    <h3>Healthcare Providers:</h3>
+    <p><%= patient.providers %></p>
+</div>
+
+<h2>Vital Signs</h2>
+
+
+<%- include('../partials/footer') %>
