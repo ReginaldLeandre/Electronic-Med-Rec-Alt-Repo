@@ -1,3 +1,4 @@
+const patient = require("../models/patient");
 const Patient = require("../models/patient");
 const User = require("../models/user");
 
@@ -6,7 +7,8 @@ module.exports = {
     new: addUser,
     create: createUser,
     show,
-    addToProvider
+    addToProvider,
+    removeFromProvider
 }
 
 
@@ -85,7 +87,7 @@ async function addToProvider (req, res, next) {
 
             await foundPatient.save()
 
-            console.log("try to find provider ID ", providerId)
+            // console.log("try to find provider ID ", providerId)
 
             res.redirect(`/users/${providerId}`)
 
@@ -95,3 +97,29 @@ async function addToProvider (req, res, next) {
             res.redirect('/')
         }
     }
+
+
+    async function removeFromProvider (req, res, next) {
+
+        console.log("trying to remove patient from provider")
+    
+            const providerId = req.params.userId
+    
+            const patientId = req.body.patientId // patient data from the form select 
+
+            try {
+
+                const patient = await Patient.findById(patientId)
+
+                patient.providers.remove({_id: providerId})
+
+                await patient.save()
+    
+                res.redirect(`/users/${providerId}`)
+    
+
+            }catch (err){
+                console.log(err)
+                res.redirect('/')
+            }
+        }

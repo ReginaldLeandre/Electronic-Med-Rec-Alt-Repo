@@ -21,11 +21,14 @@
         <% patients.forEach(p=>{%>
           <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a>
         
-            
-            <button>Unassign Patient</button></li>
 
+            <form action="/users/<%=user._id%>/?_method=PUT" method="POST" id="unassign-patient-form">
+                <input type="hidden" name="patientId" value="<%=p._id%>">
+            <button type="submit">Unassign Patient</button>
+           </form>
 
         <% })%>
+
 
       </ul>
       <!-- iterate over all the of the cast values in this movies cast [] if there are object ids stored -->
