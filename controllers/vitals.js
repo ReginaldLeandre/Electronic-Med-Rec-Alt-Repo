@@ -11,7 +11,7 @@ async function newVitals(req, res, next) {
     try {
         const patient = await Patient.findById(req.params.patientId)
         // res.send(patient)
-        res.render("patients/newVitals", {
+        res.render("vitals/new", {
             title: `Add vital signs for: ${patient.name}`,
             patient
         })

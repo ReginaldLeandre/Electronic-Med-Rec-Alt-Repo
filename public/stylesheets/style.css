@@ -55,10 +55,30 @@ table, th, td {
   height: 20px;
 }
 
+#vitals-main-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+}
+
+
+
+/* #vitals-main-container div {
+  display: flex;
+  flex-direction: column;
+} */
+
 .WavelengthsClass {
   display: flex;
   justify-content: center; 
   align-items: flex-start;
+}
+
+.vitals-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
 }
 
 body {
@@ -73,4 +93,9 @@ body {
   width: fit-content;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.abnormal-vitals {
+  color: red;
+  font-weight: bold;
 }
