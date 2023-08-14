@@ -10,7 +10,7 @@
     <h3>Medical History:</h3>
     <p><%= patient.medHx %></p>
     <h3>Healthcare Providers:</h3>
-    <p><%= patient.providers %></p>
+    <p><%= providers %></p>
 </div>
 
 
@@ -23,6 +23,7 @@
         <p><strong>Respirations</strong></p>
         <p><strong>O2 Saturation</strong></p>
         <p><strong>Temperature</strong></p>
+        <p> </p>
     </div>
         <% patient.vitals.forEach(function(v) { %>
             <div class="vitals-container">
@@ -57,6 +58,12 @@
                     class="abnormal-vitals"
                 <% } %>
                 ><%= v.temp %>°</p>
+                
+                <p>
+                    <form action="/patients/<%= patient._id%>/vitals/?_method=DELETE" method="POST">
+                    <button type="submit" class="delete-button">DELETE</button>
+                </form>
+                </p>
             </div>
         <% }) %>
 </div>
