@@ -11,7 +11,7 @@
 
 
 <h2>Assign Patient to Proider <%= user.name %> </h2>
-<form method="POST" action="/users/<%=user._id%>/">
+<form method="POST" action="/users/<%=user._id%>">
   <select name="patientId">
     <% allPatients.forEach(p =>{%>
     <option value="<%=p._id%>"><%= p.name %> | <%= p.DOB.toLocaleDateString() %></option>

@@ -12,5 +12,6 @@ router.post("/", usersCtrl.create)
 
 router.get("/:userId", usersCtrl.show)
 
+router.post("/:userId", usersCtrl.addToProvider)
 
 module.exports = router;

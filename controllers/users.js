@@ -5,7 +5,8 @@ module.exports = {
     index,
     new: addUser,
     create: createUser,
-    show
+    show,
+    addToProvider
 }
 
 
@@ -13,7 +14,7 @@ module.exports = {
 async function index (req, res, next) {
     try {
         const results = await User.find({ });
-        console.log(results)
+        // console.log(results)
         res.render('users/index', { title: "All Providers", users: results })
     } catch (err) {
         console.log(err.message);
@@ -26,7 +27,7 @@ async function index (req, res, next) {
 async function show (req, res, next) {
     try {
 
-        console.log("trying to find all Patients")
+        // console.log("trying to find all Patients")
 
         const user  = await User.findOne({_id: req.params.userId})
 
@@ -34,9 +35,9 @@ async function show (req, res, next) {
 
         const allPatients = await Patient.find({  })
 
-        console.log("looking for all matching patients", allPatients)
+        // console.log("looking for all matching patients", allPatients)
 
-        console.log(user)
+        // console.log(user)
         res.render("users/show", {
             title: user.name,
             user,
@@ -67,3 +68,32 @@ async function createUser(req, res, next) {
         next(Error(err))
     }
 }
+
+
+async function addToProvider (req, res, next) {
+
+    console.log("trying to add patient to provider")
+
+        const providerId = req.params.userId
+
+        const patientId = req.body.patientId // patient data from the form select 
+        
+        try {
+            const foundPatient = await Patient.findById(patientId)
+
+            foundPatient.providers.push(providerId)
+
+            await foundPatient.save()
+
+            console.log("try to find provider ID ", providerId)
+
+            res.redirect(`/users/${providerId}`)
+
+
+            
+        }catch (err){
+            console.log(err)
+            res.redirect('/')
+        }
+
+    }
