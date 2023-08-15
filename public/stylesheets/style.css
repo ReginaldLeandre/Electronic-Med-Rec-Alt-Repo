@@ -3,6 +3,15 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+p {
+  padding-left: 10px;
+}
+
+h2, h3, h4 {
+  padding-left: 10px;
+}
+
+
 a {
   color: #00B7FF;
 }
@@ -45,6 +54,8 @@ table, th, td {
   left: 0;
   color: rgb(8, 8, 8); 
   margin-left: 10px;
+  background-color: beige;
+  padding: 4px;
 
 }
 
@@ -118,7 +129,7 @@ table, th, td {
 
 .Vitals-divider{
   display: flex;
-  justify-content:right;
+  /* justify-content:right; */
   align-items: center;
   
 }
@@ -166,6 +177,7 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link{
   flex-direction: column;
   height: 400px;
   padding-right: 15px;
+  border: 1px solid black;
 }
 
 
@@ -286,6 +298,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.user-avatar-for-patient {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.user-avatar-for-patient {
+  display: inline
+
+}
+
+.user-avatar-for-patient img {
+  border-radius: 50%;
+  height: 60px;
 }
 
 .user-avatar img {

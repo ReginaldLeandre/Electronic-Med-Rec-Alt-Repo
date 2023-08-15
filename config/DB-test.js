@@ -117,6 +117,7 @@ async function deleteAllUsers() {
 
 
 // deleteAllUsers()
+
 async function assignAdmin(stringName) {
     try {
         const user = await User.findOne({name: stringName})

@@ -5,42 +5,43 @@
     <p><%= patient.name %></p>
     <h3>Date of Birth (yyyy-mm-dd):</h3>
     <p><%= patient.DOB.toLocaleDateString() %></p>
+    <h3>ID:</h3>
+    <p><%= patient._id %></p>
     <h3>Chief Complaing:</h3>
     <p><%= patient.chiefComplaint %></p>
     <h3>Medical History:</h3>
     <p><%= patient.medHx %></p>
     <h3>Healthcare Providers:</h3>
     <p><%= providers %></p>
-    <h3>ID:</h3>
-    <p><%= patient._id %></p>
-</div>
 
+    <h3></h3>
 
-
-<h2 id="Vitals-Header">Vital Signs</h2> <div class="Vitals-divider"><a class="vitals_Link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a></div>
-<br>
-
-<div>
-
-    
+    <div class="avatars-on-patient-page">
     <%  avatars.forEach(function(p) { %>
 
         <% if(p) {  %>
-        <div class="user-avatar"><img alt="avatar" src="<%= p %>" referrerpolicy="no-referrer"></div>
+        <p class="user-avatar-for-patient"><img alt="avatar" src="<%= p %>" referrerpolicy="no-referrer"></p>
         <%  } %>
 
     <% }) %>
 
+    </div>
+
 </div>
 
 
+<div>
+
+</div>
 
 
-<h2>Vital Signs</h2>
+<h2 id="Vitals-Header">Vital Signs</h2> 
+
+<br>
+
 
 <div id="vitals-main-container">
 
-    
     <div class="vitals-container">
         <p><strong>Date</strong></p>
         <p><strong>Time</strong></p>
@@ -49,7 +50,10 @@
         <p><strong>Respirations</strong></p>
         <p><strong>O2 Saturation</strong></p>
         <p><strong>Temperature</strong></p>
-        <p> </p>
+        <br>
+        <p></p>
+        <div class="Vitals-divider"><a class="vitals_Link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a></div>
+
     </div>
         <% patient.vitals.forEach(function(v) { %>
             <div class="vitals-container">
@@ -93,15 +97,14 @@
                 </p>
             </div>
         <% }) %>
+
 </div>
 
 
- 
 <br>
 
 
 
-<a class="vitals-link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a> 
 
 
 <form class="dischargeForm" action="/patients/<%= patient._id %>?_method=PUT" method="POST" >
