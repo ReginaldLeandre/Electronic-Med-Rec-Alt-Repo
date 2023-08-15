@@ -1,5 +1,33 @@
-<%- include('./partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title class="titleClass"><%= title %></title>
+</head>
+<body>
+    
+    <nav class="nav">
 
-<h1 class="WavelengthsClass">Wavelengths: EMR</h1>
+        <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>&nbsp;Home&nbsp;</a>
+        <% if (user) { %>
+            <a href="/patients"	<%- title === 'Patients' ? 'class="active"' : '' %>>
+                |&nbsp; PATIENTS |</a>
+            <a id="addPatient" href="/patients/new"	<%- title === 'Add Patient' ? 'class="active"' : '' %>>
+                &nbsp; ADD PATIENT |</a>
+            <a href="/users" <%- title === 'Providers' ? 'class="active"' : '' %>>
+                &nbsp; PROVIDERS |</a>
+            <a href="/logout">&nbsp; LOG OUT</a>
+
+        <% } else { %>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+    </nav>
+
+<div class="wavelength-gif">
+<img src="wavelength.gif">
+</div>
+
 
 <%- include('./partials/footer') %>
