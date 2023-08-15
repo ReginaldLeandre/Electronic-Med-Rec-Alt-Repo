@@ -7,7 +7,15 @@
         <input type="text" name="name">
     </label>
     <label>Role
-        <input type="text" name="role">
+            <select name="role">
+                <option selected disabled>Select User's Role</option>
+                <% options.forEach(function(option) { %>
+                    <option value= <%= option %>><%= option %></option>
+                <% }) %>
+            </select>
+    </label>
+    <label> Admin privileges
+        <input type="checkbox" name="admin">
     </label>
     <button type="submit">Add Provider</button>
 </form>

@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<br>
+<form action="/users/?_method=PUT" method="POST" id="edit-user-form">
+    <label>Name
+        <input type="text" name="name" value="<%=user.name%>">
+    </label>
+    <label>Role
+        <select name="role">
+            <% options.forEach(function(option) { %>
+                <option value= <%= option %>
+
+                    <%- (user.role === option) ? "selected" : "" %>
+
+                    > <%= option %></option>
+            <% }) %>
+        </select>
+    </label>
+    <label> Admin privileges
+        <input type="checkbox" name="admin" <%- (user.admin) ? "checked" : "" %>>
+    </label>
+    <input type="hidden" name="userId" value="<%= user._id %>">
+    <button type="submit">Update Provider</button>
+</form>
+
+<%- include('../partials/footer') %>

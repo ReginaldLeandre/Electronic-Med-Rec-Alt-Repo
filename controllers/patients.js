@@ -29,7 +29,7 @@ async function index (req, res, next) {
             const results = await Patient.find({discharged: false}).sort("name");
             res.render('patients/index', { 
                 title: "Admitted Patients", 
-                patients: results 
+                patients: results
             })
         }
     } catch (err) {
