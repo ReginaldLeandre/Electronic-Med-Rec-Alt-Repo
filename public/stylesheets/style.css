@@ -195,7 +195,7 @@ body {
   align-items: flex-start;
   width: fit-content;
   margin: auto;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: beige;
 }
 
 
@@ -284,7 +284,7 @@ body {
 
 .user-avatar {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
 }
 
@@ -295,9 +295,12 @@ body {
 
 #user-avatar-box {
   display: flex;
+  justify-content: center;
   width: 70px;
   background-color: beige;
   border: 1px solid black;
   height: 70px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
