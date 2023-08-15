@@ -1,11 +1,16 @@
 <%- include('../partials/header') %>
 
+<div id="user-avatar-box">
+<div class="user-avatar"><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"></div>
+</div>
 
 <div id="user-show-grid">
+
     <h3>Name:</h3>
     <p><%= user.name %></p>
     <h3>Role:</h3>
     <p><%= user.role %></p>
+
 </div>
 
 
