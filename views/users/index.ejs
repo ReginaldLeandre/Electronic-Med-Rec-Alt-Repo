@@ -2,34 +2,35 @@
 <%- include('../partials/header') %>
 
 <div class="table-container">
-<table class="list">
-    <thead>
-      <tr>
-        <th>Name:</th>
-        <th>Role:</th>
-        <%- (user.admin) ? "<th></th>" : "" %>
-      </tr>
-    </thead>
-    <tbody>
-      <% users.forEach(function(u) { %>
+  <table class="list">
+      <thead>
         <tr>
-          <td><a href="users/<%= u._id %>"><%= u.name %></td>
-          <br>
-          <td><%= u.role %></td>
-          <% if (user.admin) { %>
-            <br/>
-            <th><a href="/users/<%=u._id%>/edit">EDIT</a></th>
-          <% } %>
+          <th>Name:</th>
+          <th>Role:</th>
+          <%- (user.admin) ? "<th></th>" : "" %>
         </tr>
-        <% }); %>
+      </thead>
+      <tbody>
+        <% users.forEach(function(u) { %>
+          <tr>
+            <td><a href="/users/<%= u._id %>"><%= u.name %></td>
+            <br>
+            <td><%= u.role %></td>
+            <% if (user.admin) { %>
+              <br/>
+              <th>
+                <form action="/users/<%= u._id %>/edit" method="GET">
+                  <button type="submit">Edit User</button>
+                </form>
+              </th>
+            <% } %>
+          </tr>
+          <% }); %>
       </tbody>
     </table>
   </div>
 
-
-  
   <br>
-
 
   <div class="addObject">
   <% if (user.admin) { %>
