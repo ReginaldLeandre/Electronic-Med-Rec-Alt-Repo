@@ -58,7 +58,6 @@ function addUser (req, res, next) {
     res.render("users/new", { 
         title: "Add Provider",
         options
-
     } )
     // not an async function
 }
