@@ -92,8 +92,12 @@ async function discharge (req, res, next) {
     try{
         const patient = await Patient.findById(req.params.patientId);
         // console.log(patient)
-        patient.discharged = true;
-        patient.dischargeDate = new Date();
+        patient.discharged = patient.discharged ? false : true;
+        if (patient.discharged) {
+            patient.dischargeDate.push(new Date())
+        } else {
+            patient.admissionDate.push(new Date())
+        }
         await patient.save()
         res.redirect('/patients')
     }

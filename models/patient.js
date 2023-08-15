@@ -66,8 +66,10 @@ const patientSchema = new Schema( {
       default: false
     },
     dischargeDate: {
-      type: Date,
-      default: null
+      type: [Date],
+    },
+    admissionDate: {
+      type: [Date],
     }
 },
 {
