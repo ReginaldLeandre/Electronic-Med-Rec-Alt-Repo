@@ -14,10 +14,14 @@ const userSchema = new Schema( {
     googleId: {
         type: String,
         required: true
-      },
-      email: String,
-      avatar: String,
-      userId: Schema.Types.ObjectId
+    },
+    admin: {
+        type: Boolean,
+        default: false
+    },
+    email: String,
+    avatar: String,
+    userId: Schema.Types.ObjectId
     },
     // googleID: type: String, required: true (step 8.3)
  {
