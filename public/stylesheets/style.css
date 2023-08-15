@@ -251,3 +251,13 @@ body {
   padding-right: 30px;
 
 }
+
+#providers-view-container {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#providers-view-container td, th {
+  width: 30px;
+
+}
