@@ -143,3 +143,15 @@ body {
   font-weight: bold;
 }
 
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}

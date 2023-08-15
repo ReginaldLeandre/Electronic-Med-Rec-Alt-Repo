@@ -9,10 +9,17 @@ const userSchema = new Schema( {
     },
     role: {
         type: String
-    }
-    // userId: Schema.Types.ObjectId
+        // consider making this enum
+    }, 
+    googleId: {
+        type: String,
+        required: true
+      },
+      email: String,
+      avatar: String,
+      userId: Schema.Types.ObjectId
+    },
     // googleID: type: String, required: true (step 8.3)
- },
  {
     timestamps: true,
 })
