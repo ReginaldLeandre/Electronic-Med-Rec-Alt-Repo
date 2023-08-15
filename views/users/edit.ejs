@@ -8,7 +8,6 @@
         <select name="role">
             <% options.forEach(function(option) { %>
                 <option value="<%= option %>" 
-
                     <%- (user.role === option) ? "selected" : "" %>
 
                     > <%= option %></option>
