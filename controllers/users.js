@@ -13,7 +13,7 @@ module.exports = {
 
 async function index (req, res, next) {
     try {
-        const results = await User.find({ });
+        const results = await User.find({ }).sort("name");
         // console.log(results)
         res.render('users/index', { title: "All Providers", users: results })
     } catch (err) {
@@ -35,8 +35,8 @@ async function show (req, res, next) {
 
         const allPatients = await Patient.find({  })
 
-        const availableOptions = await Patient.find({providers: {$ne: user._id}})
-
+        const availableOptions = await Patient.find({providers: {$ne: user._id}}).sort("name")
+        
         // console.log(user)
         res.render("users/show", {
             title: user.name,
