@@ -10,24 +10,30 @@
     
     <nav class="nav">
 
-        <a class="Home-nav" href="/" <%- title === 'Home' ? 'class="active"' : '' %>>&nbsp;Home&nbsp;</a>
+        <a class="Home-nav" href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
         <% if (user) { %>
             <a class="Home-nav" href="/patients"	<%- title === 'Patients' ? 'class="active"' : '' %>>
-                |&nbsp; PATIENTS |</a>
+                PATIENTS </a>
             <a class="Home-nav" id="addPatient" href="/patients/new"	<%- title === 'Add Patient' ? 'class="active"' : '' %>>
-                &nbsp; ADD PATIENT |</a>
+                ADD PATIENT</a>
             <a class="Home-nav" href="/users" <%- title === 'Providers' ? 'class="active"' : '' %>>
-                &nbsp; PROVIDERS |</a>
-            <a class="Home-nav" href="/logout">&nbsp; LOG OUT</a>
+                PROVIDERS</a>
+            <a class="Home-nav" href="/logout">LOG OUT</a>
 
         <% } else { %>
-            <a class="Home-nav" href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
     </nav>
 
 <div class="wavelength-gif">
 <img src="wavelength.gif">
 </div>
+
+<section class="home-text">
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga totam quia omnis sit eaque sapiente, ex aut amet aperiam culpa reiciendis tempore excepturi ipsa reprehenderit, laborum at odio quaerat dolores.</p>
+
+</section>
 
 
 <%- include('./partials/footer') %>

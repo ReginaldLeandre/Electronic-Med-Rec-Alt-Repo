@@ -43,11 +43,13 @@ table, th, td {
   position: fixed;
   bottom: 0;
   left: 0;
-  color: white; /* Set the text color to white */
+  color: rgb(8, 8, 8); 
+  margin-left: 10px;
+
 }
 
 #patients-show-grid {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: beige;
   display: grid;
   grid-template-columns: 1fr 2fr;
   border-collapse: collapse;
@@ -60,9 +62,8 @@ table, th, td {
 }
 
 
-
 #user-show-grid {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: beige;
   display: grid;
   grid-template-columns: 1fr 2fr;
   border-collapse: collapse;
@@ -75,7 +76,7 @@ table, th, td {
 }
 
 #assigned-patients-grid {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: beige;
   display: grid;
   grid-template-columns: 1fr 2fr;
   border-collapse: collapse;
@@ -88,7 +89,7 @@ table, th, td {
 }
 
 #vitals-main-container {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: beige;
   display: flex;
   flex-direction: row;
   height: 400px;
@@ -111,13 +112,19 @@ table, th, td {
 
 
 
-.Home-nav:hover, button:hover, #addHospitalRecord:hover {
+.Home-nav:hover, button:hover, #addHospitalRecord:hover, .login:hover {
     background-color: #18c212 
     
 }
 
 button, .Home-nav, #addHospitalRecord{
+
   display: inline-block;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 5px; 
   padding: 4px 8px;
   background-color: #3498db;
   color: #ffffff;
@@ -128,6 +135,11 @@ button, .Home-nav, #addHospitalRecord{
   text-decoration: none;
   font-size: 16px;
   transition: background-color 0.3s ease-in-out;
+}
+
+
+.Home-nav:last-of-type {
+  margin-left: auto;
 }
 
 .WavelengthsClass {
@@ -144,6 +156,7 @@ button, .Home-nav, #addHospitalRecord{
 }
 
 
+
 .dischargeForm{
   display: flex;
   justify-content: center;
@@ -154,7 +167,6 @@ button, .Home-nav, #addHospitalRecord{
 body {
   background-image: url("../medicalBackground.jpg");
   background-repeat: repeat;
-  /* background-size: cover; */
   background-attachment: fixed;
 }
 
@@ -185,13 +197,29 @@ body {
 .login {
   display: flex;
   justify-content: flex-end;
+
+  background-color: #9fc7e2;
+  color: #131212;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+
+  padding: 4px 8px;
+
   margin-left: auto;
   align-items: center;
-  height: 34px;
+
+  transition: background-color 0.3s ease-in-out;
 }
 
+
+
 .login img {
-  height: 30px;
+  height: 25px;
+  background-color: #9fc7e2;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .discharged-highlight {
@@ -209,4 +237,17 @@ body {
   padding-right: 5px;
   align-items: center;
   background-color: white;
+}
+
+.home-text {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  background-color: white;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
+
 }
