@@ -16,6 +16,22 @@
 </div>
 
 
+<div>
+
+    
+    <%  avatars.forEach(function(p) { %>
+
+        <% if(p) {  %>
+        <div class="user-avatar"><img alt="avatar" src="<%= p %>" referrerpolicy="no-referrer"></div>
+        <%  } %>
+
+    <% }) %>
+
+</div>
+
+
+
+
 <h2>Vital Signs</h2>
 <div id="vitals-main-container">
     <div class="vitals-container">
@@ -71,6 +87,8 @@
             </div>
         <% }) %>
 </div>
+
+
 
 <a class="vitals-link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a> 
 
