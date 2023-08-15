@@ -8,7 +8,8 @@ module.exports = {
     show,
     addToProvider,
     removeFromProvider,
-    edit
+    edit,
+    update
 }
 
 
@@ -133,9 +134,15 @@ async function addToProvider (req, res, next) {
         }
 
 async function edit(req, res, next) {
+    const options = ["Nurse Practitioner", "Registered Nurse", "Full-Stack Developer", "Physician", "Lab Technician", "Radiologist", "Clerk", "Other"]
     const user = await User.findById(req.params.userId)
     res.render("users/edit", {
-        title: `edit user: ${user.name}`,
-        user
+        title: `Edit User: ${user.name}`,
+        user,
+        options
     })
+}
+
+async function update(req, res, next) {
+    
 }

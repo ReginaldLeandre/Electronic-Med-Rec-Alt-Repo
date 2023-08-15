@@ -26,9 +26,10 @@
     </table>
   </div>
 
-  
-  <br>
+  <% if (user.admin) { %>
+      <br>
     <a href="/users/new">Add New Provider</a>
+  <% } %>
 
 
 <%- include('../partials/footer') %>

@@ -18,4 +18,6 @@ router.put("/:userId", usersCtrl.removeFromProvider)
 
 router.get("/:userId/edit", usersCtrl.edit)
 
+router.put("/", usersCtrl.update)
+
 module.exports = router;
