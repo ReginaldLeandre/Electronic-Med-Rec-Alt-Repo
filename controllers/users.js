@@ -135,14 +135,30 @@ async function addToProvider (req, res, next) {
 
 async function edit(req, res, next) {
     const options = ["Nurse Practitioner", "Registered Nurse", "Full-Stack Developer", "Physician", "Lab Technician", "Radiologist", "Clerk", "Other"]
-    const user = await User.findById(req.params.userId)
-    res.render("users/edit", {
-        title: `Edit User: ${user.name}`,
-        user,
-        options
-    })
+    try{
+        const user = await User.findById(req.params.userId)
+        res.render("users/edit", {
+            title: `Edit User: ${user.name}`,
+            user,
+            options
+        })
+    }catch(err) {
+        console.log(err)
+        next(Error(err))
+    }
 }
 
 async function update(req, res, next) {
-    
+    try {
+        const user = await User.findById(req.body.userId)
+        console.log("updating user, old data: ", user)
+        const updatedData = {...req.body}
+        await User.findOneAndUpdate({_id: user._id}, updatedData)
+        user.save()
+        console.log("updated user data, new data: ", user)
+        res.redirect(`/users/${user._id}`)
+    }catch(err) {
+        console.log(err)
+        next(Error(err))
+    }
 }

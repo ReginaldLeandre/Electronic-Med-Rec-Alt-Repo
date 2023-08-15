@@ -8,6 +8,7 @@
     </label>
     <label>Role
             <select name="role">
+                <option selected disabled>Select User's Role</option>
                 <% options.forEach(function(option) { %>
                     <option value= <%= option %>><%= option %></option>
                 <% }) %>
