@@ -5,18 +5,33 @@ module.exports = {
     index,
     new: addPatient,
     create: createPatient,
-    show
+    show,
+    discharge
 }
 
 
 async function index (req, res, next) {
 
     try {
-        const results = await Patient.find({discharged: false}).sort("name");
-        res.render('patients/index', { 
-            title: "All Patients", 
-            patients: results 
-        })
+        if (req.query.searchQuery === "all") {
+            const results = await Patient.find({}).sort("name");
+            res.render('patients/index', { 
+                title: "All Patients", 
+                patients: results 
+            })
+        } else if (req.query.searchQuery === "discharged") {
+            const results = await Patient.find({discharged: true});
+            res.render("patients/index", {
+                title: "Discharged Patients",
+                patients: results
+            })
+        } else {
+            const results = await Patient.find({discharged: false}).sort("name");
+            res.render('patients/index', { 
+                title: "Admitted Patients", 
+                patients: results 
+            })
+        }
     } catch (err) {
         console.log(err);
         next (Error(err))
@@ -72,4 +87,20 @@ async function show (req, res, next) {
         next(Error(err))
     }
 }
+
+async function discharge (req, res, next) {
+    try{
+        const patient = await Patient.findById(req.params.patientId);
+        // console.log(patient)
+        patient.discharged = true;
+        patient.dischargeDate = new Date();
+        await patient.save()
+        res.redirect('/patients')
+    }
+    catch (err) {
+        console.log(err);
+        next(Error(err));
+    }
+}
+
 

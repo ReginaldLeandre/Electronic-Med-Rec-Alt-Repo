@@ -110,6 +110,7 @@ table, th, td {
   display: flex;
   flex-direction: column;
   height: 400px;
+  padding-right: 15px;
 }
 
 body {

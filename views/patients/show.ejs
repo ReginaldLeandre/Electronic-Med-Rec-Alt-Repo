@@ -11,12 +11,15 @@
     <p><%= patient.medHx %></p>
     <h3>Healthcare Providers:</h3>
     <p><%= providers %></p>
+    <h3>ID:</h3>
+    <p><%= patient._id %></p>
 </div>
 
 
 <h2>Vital Signs</h2>
 <div id="vitals-main-container">
     <div class="vitals-container">
+        <p><strong>Date</strong></p>
         <p><strong>Time</strong></p>
         <p><strong>Heart Rate</strong></p>
         <p><strong>Blood Pressure</strong></p>
@@ -27,7 +30,8 @@
     </div>
         <% patient.vitals.forEach(function(v) { %>
             <div class="vitals-container">
-                <p><%= v.time %></p>
+                <p><%= v.time.toLocaleDateString() %></p>
+                <p><%= v.time.toLocaleTimeString() %></p>
 
                 <p
                 <% if (v.heartRate > 100 || v.heartRate <80) { %>
@@ -68,6 +72,9 @@
         <% }) %>
 </div>
 
-<a href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a>
+<a href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a> 
 
+<form  action="/patients/<%= patient._id %>?_method=PUT" method="POST" >
+    <button>Discharge Patient</button>
+</form>
 <%- include('../partials/footer') %>

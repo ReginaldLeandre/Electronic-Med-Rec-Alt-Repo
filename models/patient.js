@@ -63,7 +63,11 @@ const patientSchema = new Schema( {
     vitals: [vitalSchema],
     discharged: {
       type: Boolean,
-      default: false,
+      default: false
+    },
+    dischargeDate: {
+      type: Date,
+      default: null
     }
 },
 {
