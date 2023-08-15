@@ -1,17 +1,4 @@
-
 <%- include('../partials/header') %>
-
-<h3>Filter Patients View</h3>
-<form method="GET" action="/patients">
-    <select name="searchQuery">
-        <option selected disabled>Select Filter</option>
-        <option value="admitted">Admitted Patients</option>
-        <option value="all">All Patients</option>
-        <option value="discharged">Discharged Patients</option>
-    </select>
-          <input type="submit" value="Assign Patient" />
-  </form>
-  <br>
 
 <div class="table-container">
 <table class="list">
@@ -19,7 +6,7 @@
       <tr>
         <th>Name:</th>
         <th>DOB:</th>
-        <th>Chief Complaint:</th>
+        <th>Discharge Date</th>
         <th>ID:</th>
       </tr>
     </thead>
@@ -28,7 +15,7 @@
         <tr>
           <td><a href="patients/<%= p._id %>"><%= p.name %></a></td>
           <td><a href="patients/<%= p._id %>"><%= p.DOB.toLocaleDateString() %></a></td>
-          <td><a href="patients/<%= p._id %>"><%= p.chiefComplaint %></a></td>
+          <td><a href="patients/<%= p._id %>"><%= p.dischargeDate %></a></td>
           <td><a href="patients/<%= p._id %>"><%= p._id %></a></td>
         </tr>
         <% }); %>
@@ -36,6 +23,6 @@
     </table>
   </div>
 
-  <a id="addPatient" href="/patients/new">Add Patient</a>
+
  
   <%- include('../partials/footer') %>
