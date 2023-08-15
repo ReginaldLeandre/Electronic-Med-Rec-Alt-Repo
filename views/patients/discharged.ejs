@@ -1,4 +1,3 @@
-
 <%- include('../partials/header') %>
 
 <div class="table-container">
@@ -7,7 +6,7 @@
       <tr>
         <th>Name:</th>
         <th>DOB:</th>
-        <th>Chief Complaint:</th>
+        <th>Discharge Date</th>
         <th>ID:</th>
       </tr>
     </thead>
@@ -16,7 +15,7 @@
         <tr>
           <td><a href="patients/<%= p._id %>"><%= p.name %></a></td>
           <td><a href="patients/<%= p._id %>"><%= p.DOB.toLocaleDateString() %></a></td>
-          <td><a href="patients/<%= p._id %>"><%= p.chiefComplaint %></a></td>
+          <td><a href="patients/<%= p._id %>"><%= p.dischargeDate %></a></td>
           <td><a href="patients/<%= p._id %>"><%= p._id %></a></td>
         </tr>
         <% }); %>
@@ -24,6 +23,6 @@
     </table>
   </div>
 
-  <a id="addPatient" href="/patients/new">Add Patient</a>
+
  
   <%- include('../partials/footer') %>
