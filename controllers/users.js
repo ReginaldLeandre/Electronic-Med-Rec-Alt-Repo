@@ -153,6 +153,7 @@ async function update(req, res, next) {
         const user = await User.findById(req.body.userId)
         console.log("updating user, old data: ", user)
         const updatedData = {...req.body}
+        updatedData.admin = updatedData.admin ? true : false
         await User.findOneAndUpdate({_id: user._id}, updatedData)
         user.save()
         console.log("updated user data, new data: ", user)
