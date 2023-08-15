@@ -58,6 +58,9 @@ function addUser (req, res, next) {
 
 
 async function createUser(req, res, next) {
+
+    // can have a default googleid (if one otherwise not available by login) for the site admin (make email just for the app)
+
     console.log("creating new user")
     try {
         const newData = {...req.body}
