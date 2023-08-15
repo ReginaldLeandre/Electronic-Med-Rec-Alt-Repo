@@ -117,3 +117,11 @@ async function deleteAllUsers() {
 
 
 // deleteAllUsers()
+async function assignAdmin(stringName) {
+    const user = await User.findOne({name: stringName})
+    user.admin = true
+    await user.save()
+    console.log(user)
+}
+
+// assignAdmin("William H")
