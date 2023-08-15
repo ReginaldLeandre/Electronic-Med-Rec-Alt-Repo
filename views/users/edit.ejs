@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<br>
+<form action="/users?_method=PUT" method="POST" id="edit-user-form">
+    <label>Name
+        <input type="text" name="name" value="user">
+    </label>
+    <label>Role
+        <input type="text" name="role">
+    </label>
+    <button type="submit">Add Provider</button>
+</form>
+
+<%- include('../partials/footer') %>

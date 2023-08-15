@@ -118,10 +118,15 @@ async function deleteAllUsers() {
 
 // deleteAllUsers()
 async function assignAdmin(stringName) {
-    const user = await User.findOne({name: stringName})
-    user.admin = true
-    await user.save()
-    console.log(user)
+    try {
+        const user = await User.findOne({name: stringName})
+        user.admin = true
+        await user.save()
+        console.log(user)
+    } catch(err) {
+        console.log(err)
+    }
+    process.exit()
 }
 
 // assignAdmin("William H")

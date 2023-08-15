@@ -7,7 +7,8 @@ module.exports = {
     create: createUser,
     show,
     addToProvider,
-    removeFromProvider
+    removeFromProvider,
+    edit
 }
 
 
@@ -124,3 +125,11 @@ async function addToProvider (req, res, next) {
                 res.redirect('/')
             }
         }
+
+async function edit(req, res, next) {
+    const user = await User.findById(req.params.userId)
+    res.render("users/edit", {
+        title: `edit user: ${user.name}`,
+        user
+    })
+}
