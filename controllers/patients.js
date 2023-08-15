@@ -60,6 +60,7 @@ async function createPatient(req, res, next) {
         const { name, DOB, chiefComplaint, medHx } = req.body;
         const newPatient = new Patient({ name, DOB, chiefComplaint, medHx });
         await newPatient.save();
+        newPatient.admissionDates.push(new Date())
         // const newPatient = {...req.body}
         // await Patient.create(newPatient)
         console.log("Patient added Successfully!");
