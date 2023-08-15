@@ -53,7 +53,12 @@ async function show (req, res, next) {
 }
 
 function addUser (req, res, next) {
-    res.render("users/new", { title: "Add Provider"} )
+    const options = ["Nurse Practitioner", "Registered Nurse", "Full-Stack Developer", "Physician", "Lab Technician", "Radiologist", "Clerk", "Other"]
+    res.render("users/new", { 
+        title: "Add Provider",
+        options
+
+    } )
     // not an async function
 }
 
