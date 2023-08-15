@@ -18,6 +18,8 @@ table, th, td {
   display: flex;
   justify-content: flex-start;
   margin: auto;
+  background-color: beige;
+  padding: 20px;
 }
 
 .list {
@@ -128,8 +130,6 @@ button, .Home-nav, #addHospitalRecord{
   transition: background-color 0.3s ease-in-out;
 }
 
-
-
 .WavelengthsClass {
   display: flex;
   justify-content: center; 
@@ -140,6 +140,7 @@ button, .Home-nav, #addHospitalRecord{
   display: flex;
   flex-direction: column;
   height: 400px;
+  padding-right: 15px;
 }
 
 
@@ -152,8 +153,8 @@ button, .Home-nav, #addHospitalRecord{
 
 body {
   background-image: url("../medicalBackground.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  /* background-size: cover; */
   background-attachment: fixed;
 }
 
@@ -180,3 +181,28 @@ body {
   font-weight: bold;
 }
 
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}
+
+.discharged-highlight {
+  background-color: rgb(225, 218, 218);
+}
+
+
+.wavelength-gif {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  padding-top: 20px;
+  align-items: center;
+}

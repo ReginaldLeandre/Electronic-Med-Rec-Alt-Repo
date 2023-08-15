@@ -13,11 +13,25 @@ module.exports = {
 async function index (req, res, next) {
 
     try {
-        const results = await Patient.find({discharged: false}).sort("name");
-        res.render('patients/index', { 
-            title: "All Patients", 
-            patients: results 
-        })
+        if (req.query.searchQuery === "all") {
+            const results = await Patient.find({}).sort("name");
+            res.render('patients/index', { 
+                title: "All Patients", 
+                patients: results 
+            })
+        } else if (req.query.searchQuery === "discharged") {
+            const results = await Patient.find({discharged: true});
+            res.render("patients/index", {
+                title: "Discharged Patients",
+                patients: results
+            })
+        } else {
+            const results = await Patient.find({discharged: false}).sort("name");
+            res.render('patients/index', { 
+                title: "Admitted Patients", 
+                patients: results
+            })
+        }
     } catch (err) {
         console.log(err);
         next (Error(err))

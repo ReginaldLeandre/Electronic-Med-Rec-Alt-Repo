@@ -19,10 +19,18 @@
       <h3>Assigned Patients</h3>
       <ul>
         <% patients.forEach(p=>{%>
-          <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a></li>
+          <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a>
+        
+
+            <form action="/users/<%=user._id%>/?_method=PUT" method="POST" id="unassign-patient-form">
+                <input type="hidden" name="patientId" value="<%=p._id%>">
+            <button type="submit">Unassign Patient</button>
+           </form>
+
         <% })%>
+
+
       </ul>
-      <!-- iterate over all the of the cast values in this movies cast [] if there are object ids stored -->
     </div>
 
     <br>
@@ -30,9 +38,12 @@
     <h4>Select a patient to add to patient assignments for <%= user.name %>:</h4>
 <form method="POST" action="/users/<%=user._id%>">
   <select name="patientId">
-    <% allPatients.forEach(p =>{%>
-    <option value="<%=p._id%>"><%= p.name %> | DOB:  <%= p.DOB.toLocaleDateString() %></option>
+    <% availableOptions.forEach(p =>{%>
+    <option value="<%=p._id%>"><%= p.name %> | DOB:  <%= p.DOB.toLocaleDateString() %> | <%= p._id %></option>
     <%})%>
+    <option selected disabled>
+      <%= availableOptions.length ? "Select Patient" : "No available patients" %>
+    </option>
   </select>
     <div>
         <br>
@@ -40,6 +51,7 @@
     </div>
     <br>
 </form>
+
 </section>
 
 </div>

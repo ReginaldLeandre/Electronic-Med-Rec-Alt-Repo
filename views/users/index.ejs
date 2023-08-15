@@ -7,6 +7,7 @@
       <tr>
         <th>Name:</th>
         <th>Role:</th>
+        <%- (user.admin) ? "<th></th>" : "" %>
       </tr>
     </thead>
     <tbody>
@@ -15,18 +16,28 @@
           <td><a href="users/<%= u._id %>"><%= u.name %></td>
           <br>
           <td><%= u.role %></td>
+          <% if (user.admin) { %>
+            <br/>
+            <th><a href="/users/<%=u._id%>/edit">EDIT</a></th>
+          <% } %>
         </tr>
         <% }); %>
       </tbody>
     </table>
   </div>
 
+
   
   <br>
+
+
   <div class="addObject">
+  <% if (user.admin) { %>
+      <br>
     <a id="addHospitalRecord" href="/users/new">Add New Provider</a>
+  <% } %>
   </div>
-    
+
 
 
 <%- include('../partials/footer') %>

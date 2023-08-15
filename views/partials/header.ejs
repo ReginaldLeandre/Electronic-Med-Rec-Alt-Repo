@@ -9,10 +9,23 @@
 <body>
     
     <nav class="nav">
-        <a class="Home-nav" href="/" >Home </a> |
-        <a class="Home-nav" href="/patients" >Patients </a> |
-        <a class="Home-nav" href="/users" >Providers</a> 
-        <a class="Home-nav" id="login" href="/">Login</a>     
+
+        <a class="Home-nav" href="/" <%- title === 'Home' ? 'class="active"' : '' %>>&nbsp;Home&nbsp;</a>
+        <% if (user) { %>
+            <a class="Home-nav" href="/patients"	<%- title === 'Patients' ? 'class="active"' : '' %>>
+                |&nbsp; PATIENTS |</a>
+            <a class="Home-nav" id="addPatient" href="/patients/new"	<%- title === 'Add Patient' ? 'class="active"' : '' %>>
+                &nbsp; ADD PATIENT |</a>
+            <a class="Home-nav" href="/users" <%- title === 'Providers' ? 'class="active"' : '' %>>
+                &nbsp; PROVIDERS |</a>
+            <a class="Home-nav" href="/logout">&nbsp; LOG OUT</a>
+
+        <% } else { %>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+
     </nav>
+
+
 
     <h2><%= title %></h2>

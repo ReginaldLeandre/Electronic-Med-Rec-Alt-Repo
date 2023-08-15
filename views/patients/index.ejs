@@ -1,6 +1,18 @@
 
 <%- include('../partials/header') %>
 
+<h3>Filter Patients View</h3>
+<form method="GET" action="/patients">
+    <select name="searchQuery">
+        <option selected disabled>Select Filter</option>
+        <option value="admitted">Admitted Patients</option>
+        <option value="all">All Patients</option>
+        <option value="discharged">Discharged Patients</option>
+    </select>
+          <input type="submit" value="Filter Patients" />
+  </form>
+  <br>
+
 <div class="table-container">
 <table class="list">
     <thead>
@@ -13,7 +25,7 @@
     </thead>
     <tbody>
       <% patients.forEach(function(p) { %>
-        <tr>
+        <tr <%- p.discharged ? "class='discharged-highlight'" : "class=''" %>>
           <td><a href="patients/<%= p._id %>"><%= p.name %></a></td>
           <td><a href="patients/<%= p._id %>"><%= p.DOB.toLocaleDateString() %></a></td>
           <td><a href="patients/<%= p._id %>"><%= p.chiefComplaint %></a></td>

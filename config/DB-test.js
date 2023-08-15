@@ -69,8 +69,6 @@ const user2 = {
     role: "renal fellow"
 }
 
-
-
 // addOneUser(user2)
 
 async function addOneUser(data) {
@@ -83,9 +81,15 @@ async function addOneUser(data) {
     process.exit()
 }
 
+const patient8 = {
+    name: "Sesame Seed",
+    DOB: new Date(),
+    medHx: ["AKI, renal failure, hip # in 2010"],
+    chiefComplaint: "groin pain",
+    discharged: true
+}
 
-
-// addOnePatient(patient4)
+// addOnePatient(patient8)
 
 async function deleteAllPatients() {
     try {
@@ -113,3 +117,16 @@ async function deleteAllUsers() {
 
 
 // deleteAllUsers()
+async function assignAdmin(stringName) {
+    try {
+        const user = await User.findOne({name: stringName})
+        user.admin = true
+        await user.save()
+        console.log(user)
+    } catch(err) {
+        console.log(err)
+    }
+    process.exit()
+}
+
+// assignAdmin("William H")
