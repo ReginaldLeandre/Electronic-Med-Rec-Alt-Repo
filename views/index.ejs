@@ -10,18 +10,18 @@
     
     <nav class="nav">
 
-        <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>&nbsp;Home&nbsp;</a>
+        <a class="Home-nav" href="/" <%- title === 'Home' ? 'class="active"' : '' %>>&nbsp;Home&nbsp;</a>
         <% if (user) { %>
-            <a href="/patients"	<%- title === 'Patients' ? 'class="active"' : '' %>>
+            <a class="Home-nav" href="/patients"	<%- title === 'Patients' ? 'class="active"' : '' %>>
                 |&nbsp; PATIENTS |</a>
-            <a id="addPatient" href="/patients/new"	<%- title === 'Add Patient' ? 'class="active"' : '' %>>
+            <a class="Home-nav" id="addPatient" href="/patients/new"	<%- title === 'Add Patient' ? 'class="active"' : '' %>>
                 &nbsp; ADD PATIENT |</a>
-            <a href="/users" <%- title === 'Providers' ? 'class="active"' : '' %>>
+            <a class="Home-nav" href="/users" <%- title === 'Providers' ? 'class="active"' : '' %>>
                 &nbsp; PROVIDERS |</a>
-            <a href="/logout">&nbsp; LOG OUT</a>
+            <a class="Home-nav" href="/logout">&nbsp; LOG OUT</a>
 
         <% } else { %>
-            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+            <a class="Home-nav" href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
     </nav>
 
