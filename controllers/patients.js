@@ -75,13 +75,18 @@ async function createPatient(req, res, next) {
 async function show (req, res, next) {
     try {
         const patient  = await Patient.findOne({_id: req.params.patientId}).populate("providers")
-        const providers = patient.providers.map(provider => provider.name)
+
+        const providers = patient.providers.map(provider => (provider.name))
+
+        const avatars = patient.providers.map(provider => (provider.avatar))
+
         // res.send(patient)
         // console.log(patient)
         res.render("patients/show", {
             title: patient.name,
             patient,
-            providers
+            providers,
+            avatars
         })
     }catch(err) {
         console.log(err)

@@ -33,11 +33,15 @@ async function show (req, res, next) {
 
         const user  = await User.findOne({_id: req.params.userId})
 
-        const allPatientsAssigned = await Patient.find({ providers: user._id })
+        const allPatientsAssigned = await Patient.find({ providers: user._id }).sort("name")
 
         const allPatients = await Patient.find({  })
 
         const availableOptions = await Patient.find({providers: {$ne: user._id}}).sort("name")
+
+        //
+        const avatar = user.avatar
+        //
         
         // console.log(user)
         res.render("users/show", {
@@ -45,7 +49,8 @@ async function show (req, res, next) {
             user,
             patients: allPatientsAssigned,
             allPatients,
-            availableOptions
+            availableOptions,
+            avatar
         })
     }catch(err) {
         console.log(err)
@@ -58,7 +63,6 @@ function addUser (req, res, next) {
     res.render("users/new", { 
         title: "Add Provider",
         options
-
     } )
     // not an async function
 }

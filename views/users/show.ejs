@@ -1,11 +1,23 @@
 <%- include('../partials/header') %>
 
 
+<div id="user-avatar-box">
+<div class="user-avatar"><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"></div>
+</div>
+
+
+<form action="/users/<%= user._id %>/edit" method="GET">
+  <button type="submit">Edit User</button>
+</form>
+<br>
+
 <div id="user-show-grid">
+
     <h3>Name:</h3>
     <p><%= user.name %></p>
     <h3>Role:</h3>
     <p><%= user.role %></p>
+
 </div>
 
 
@@ -20,7 +32,7 @@
       <thead>
         <tr>
           <th>Name:</th>
-          <th>DOB:</th>
+          <th>Date of Birth:</th>
           <th>Chief Complaint:</th>
           <th>ID:</th>
           <th></th>
