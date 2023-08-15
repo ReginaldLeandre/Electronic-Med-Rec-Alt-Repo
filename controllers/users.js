@@ -70,6 +70,7 @@ async function createUser(req, res, next) {
     console.log("creating new user")
     try {
         const newData = {...req.body}
+        newData.admin = (req.body.admin) ? true : false
         await User.create(newData)
         res.redirect("/users" )
     }catch(err) {
