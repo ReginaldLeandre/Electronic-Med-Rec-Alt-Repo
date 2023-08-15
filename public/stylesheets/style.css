@@ -99,6 +99,36 @@ table, th, td {
   flex-direction: column;
 } */
 
+.addObject {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 10vh;
+}
+
+
+
+
+.Home-nav:hover, button:hover, #addHospitalRecord:hover {
+    background-color: #18c212 
+    
+}
+
+button, .Home-nav, #addHospitalRecord{
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
 
 .WavelengthsClass {
   display: flex;
@@ -111,6 +141,14 @@ table, th, td {
   flex-direction: column;
   height: 400px;
 }
+
+
+.dischargeForm{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
 
 body {
   background-image: url("../medicalBackground.jpg");
