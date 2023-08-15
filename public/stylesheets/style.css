@@ -112,18 +112,25 @@ table, th, td {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 
 
+.Vitals-divider{
+  display: flex;
+  justify-content:right;
+  align-items: center;
+  
+}
 
-
-.Home-nav:hover, button:hover, #addHospitalRecord:hover, .login:hover {
+.Home-nav:hover, button:hover, #addHospitalRecord:hover, .login:hover, .vitals_Link:hover {
     background-color: #18c212 
     
 }
-
-button, .Home-nav, #addHospitalRecord{
+#Vitals-Header{
+  padding-top: 10px;
+}
+button, .Home-nav, #addHospitalRecord, .vitals_Link{
 
   display: inline-block;
 
@@ -169,6 +176,12 @@ button, .Home-nav, #addHospitalRecord{
   align-items: baseline;
 }
 
+
+
+nav > a.active {
+  color: #18c212;
+  cursor: default;
+}
 
 body {
   background-image: url("../medicalBackground.jpg");
