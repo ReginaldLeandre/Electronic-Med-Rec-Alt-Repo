@@ -6,7 +6,7 @@ module.exports = {
     new: addPatient,
     create: createPatient,
     show,
-    discharge
+    dischargeAdmit
 }
 
 
@@ -88,15 +88,15 @@ async function show (req, res, next) {
     }
 }
 
-async function discharge (req, res, next) {
+async function dischargeAdmit (req, res, next) {
     try{
         const patient = await Patient.findById(req.params.patientId);
         // console.log(patient)
         patient.discharged = patient.discharged ? false : true;
         if (patient.discharged) {
-            patient.dischargeDate.push(new Date())
+            patient.dischargeDates.push(new Date())
         } else {
-            patient.admissionDate.push(new Date())
+            patient.admissionDates.push(new Date())
         }
         await patient.save()
         res.redirect('/patients')

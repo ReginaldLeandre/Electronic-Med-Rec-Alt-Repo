@@ -13,7 +13,7 @@ router.post('/', patientsCtrl.create)
 
 
 router.get("/:patientId", patientsCtrl.show)
-router.put('/:patientId', patientsCtrl.discharge)
+router.put('/:patientId', patientsCtrl.dischargeAdmit)
 
 
 module.exports = router;
