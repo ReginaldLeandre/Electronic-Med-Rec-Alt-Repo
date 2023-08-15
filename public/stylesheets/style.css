@@ -18,6 +18,8 @@ table, th, td {
   display: flex;
   justify-content: flex-start;
   margin: auto;
+  background-color: beige;
+  padding: 20px;
 }
 
 .list {
@@ -93,13 +95,6 @@ table, th, td {
 }
 
 
-
-/* #vitals-main-container div {
-  display: flex;
-  flex-direction: column;
-} */
-
-
 .WavelengthsClass {
   display: flex;
   justify-content: center; 
@@ -115,8 +110,8 @@ table, th, td {
 
 body {
   background-image: url("../medicalBackground.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  /* background-size: cover; */
   background-attachment: fixed;
 }
 
@@ -158,4 +153,13 @@ body {
 
 .discharged-highlight {
   background-color: rgb(225, 218, 218);
+}
+
+
+.wavelength-gif {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  padding-top: 20px;
+  align-items: center;
 }
