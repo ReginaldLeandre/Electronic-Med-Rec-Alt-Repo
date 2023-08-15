@@ -17,6 +17,7 @@
 <h2>Vital Signs</h2>
 <div id="vitals-main-container">
     <div class="vitals-container">
+        <p><strong>Date</strong></p>
         <p><strong>Time</strong></p>
         <p><strong>Heart Rate</strong></p>
         <p><strong>Blood Pressure</strong></p>
@@ -27,7 +28,8 @@
     </div>
         <% patient.vitals.forEach(function(v) { %>
             <div class="vitals-container">
-                <p><%= v.time %></p>
+                <p><%= v.time.toLocaleDateString() %></p>
+                <p><%= v.time.toLocaleTimeString() %></p>
 
                 <p
                 <% if (v.heartRate > 100 || v.heartRate <80) { %>
