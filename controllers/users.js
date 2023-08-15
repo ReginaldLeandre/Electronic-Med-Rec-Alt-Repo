@@ -11,7 +11,6 @@ module.exports = {
 }
 
 
-
 async function index (req, res, next) {
     try {
         const results = await User.find({ });
