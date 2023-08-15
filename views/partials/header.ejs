@@ -10,15 +10,15 @@
     
     <nav class="nav">
 
-        <a class="Home-nav" href="/" <%- title === 'Home' ? 'class="active"' : '' %>>&nbsp;Home&nbsp;</a>
+        <a class="Home-nav" href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
         <% if (user) { %>
             <a class="Home-nav" href="/patients"	<%- title === 'Patients' ? 'class="active"' : '' %>>
-                |&nbsp; PATIENTS |</a>
+                PATIENTS</a>
             <a class="Home-nav" id="addPatient" href="/patients/new"	<%- title === 'Add Patient' ? 'class="active"' : '' %>>
-                &nbsp; ADD PATIENT |</a>
+                ADD PATIENT</a>
             <a class="Home-nav" href="/users" <%- title === 'Providers' ? 'class="active"' : '' %>>
-                &nbsp; PROVIDERS |</a>
-            <a class="Home-nav" href="/logout">&nbsp; LOG OUT</a>
+                PROVIDERS</a>
+            <a class="Home-nav" href="/logout">LOG OUT</a>
 
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
