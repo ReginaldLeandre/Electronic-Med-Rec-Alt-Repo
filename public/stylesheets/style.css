@@ -155,3 +155,7 @@ body {
 .login img {
   height: 30px;
 }
+
+.discharged-highlight {
+  background-color: rgb(225, 218, 218);
+}
