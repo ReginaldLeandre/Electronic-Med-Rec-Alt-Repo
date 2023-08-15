@@ -26,10 +26,10 @@
     <tbody>
       <% patients.forEach(function(p) { %>
         <tr <%- p.discharged ? "class='discharged-highlight'" : "class=''" %>>
-          <td><a href="patients/<%= p._id %>"><%= p.name %></a></td>
-          <td><a href="patients/<%= p._id %>"><%= p.DOB.toLocaleDateString() %></a></td>
-          <td><a href="patients/<%= p._id %>"><%= p.chiefComplaint %></a></td>
-          <td><a href="patients/<%= p._id %>"><%= p._id %></a></td>
+          <td><a href="/patients/<%= p._id %>"><%= p.name %></a></td>
+          <td><a href="/patients/<%= p._id %>"><%= p.DOB.toLocaleDateString() %></a></td>
+          <td><a href="/patients/<%= p._id %>"><%= p.chiefComplaint %></a></td>
+          <td><a href="/patients/<%= p._id %>"><%= p._id %></a></td>
         </tr>
         <% }); %>
       </tbody>

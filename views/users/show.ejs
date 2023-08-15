@@ -12,26 +12,39 @@
 <br>
 <br>
 
-<div id="assigned-patients-grid">
+<h3>Assigned Patients</h3>
+<div id="providers-view-container">
 
-<section>
-    <div>
-      <h3>Assigned Patients</h3>
-      <ul>
-        <% patients.forEach(p=>{%>
-          <li><a href="/patients/<%=p._id%>"><%=p.name%> - <small><%= p.DOB.toLocaleDateString() %></small></a>
-        
-
-            <form action="/users/<%=user._id%>/?_method=PUT" method="POST" id="unassign-patient-form">
+  <div class="providers-view-table">
+    <table class="list">
+      <thead>
+        <tr>
+          <th>Name:</th>
+          <th>DOB:</th>
+          <th>Chief Complaint:</th>
+          <th>ID:</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% patients.forEach(function(p) { %>
+          <tr <%- p.discharged ? "class='discharged-highlight'" : "class=''" %>>
+            <td><a href="/patients/<%= p._id %>"><%= p.name %></a></td>
+            <td><a href="/patients/<%= p._id %>"><%= p.DOB.toLocaleDateString() %></a></td>
+            <td><a href="/patients/<%= p._id %>"><%= p.chiefComplaint %></a></td>
+            <td><a href="/patients/<%= p._id %>"><%= p._id %></a></td>
+            <td>
+              <form action="/users/<%=user._id%>/?_method=PUT" method="POST" id="unassign-patient-form">
                 <input type="hidden" name="patientId" value="<%=p._id%>">
-            <button type="submit">Unassign Patient</button>
-           </form>
-
-        <% })%>
-
-
-      </ul>
-    </div>
+                <button type="submit">Unassign Patient</button>
+              </form>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
     <br>
 
