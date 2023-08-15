@@ -6,7 +6,7 @@ module.exports = {
     new: addPatient,
     create: createPatient,
     show,
-    discharge
+    dischargeAdmit
 }
 
 
@@ -60,6 +60,7 @@ async function createPatient(req, res, next) {
         const { name, DOB, chiefComplaint, medHx } = req.body;
         const newPatient = new Patient({ name, DOB, chiefComplaint, medHx });
         await newPatient.save();
+        newPatient.admissionDates.push(new Date())
         // const newPatient = {...req.body}
         // await Patient.create(newPatient)
         console.log("Patient added Successfully!");
@@ -88,12 +89,16 @@ async function show (req, res, next) {
     }
 }
 
-async function discharge (req, res, next) {
+async function dischargeAdmit (req, res, next) {
     try{
         const patient = await Patient.findById(req.params.patientId);
         // console.log(patient)
-        patient.discharged = true;
-        patient.dischargeDate = new Date();
+        patient.discharged = patient.discharged ? false : true;
+        if (patient.discharged) {
+            patient.dischargeDates.push(new Date())
+        } else {
+            patient.admissionDates.push(new Date())
+        }
         await patient.save()
         res.redirect('/patients')
     }
