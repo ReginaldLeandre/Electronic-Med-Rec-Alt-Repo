@@ -116,7 +116,7 @@ async function deleteAllUsers() {
 }
 
 
-// deleteAllUsers()
+deleteAllUsers()
 
 async function assignAdmin(stringName) {
     try {
