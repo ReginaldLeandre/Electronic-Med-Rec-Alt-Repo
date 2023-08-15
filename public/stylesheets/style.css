@@ -163,6 +163,7 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link{
 
 
 .Home-nav:last-of-type {
+  display: inline;
   margin-left: auto;
 }
 
@@ -261,12 +262,8 @@ body {
 .wavelength-gif {
   display: flex;
   justify-content: center;
-  margin-left: auto;
   padding-top: 20px;
   padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  align-items: center;
   background-color: white;
 }
 
@@ -300,11 +297,26 @@ body {
   align-items: center;
 }
 
+.user-avatar-nav {
+  display: inline;
+  align-items: center;
+}
+
+.user-avatar-nav img {
+  border-radius: 50%;
+  height: 22px;
+  margin-left: auto;
+  margin-bottom: -4px;
+}
+
+
 .user-avatar-for-patient {
   display: flex;
   justify-content: left;
   align-items: center;
 }
+
+
 
 .user-avatar-for-patient {
   display: inline
