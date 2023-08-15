@@ -95,6 +95,41 @@ table, th, td {
 }
 
 
+
+/* #vitals-main-container div {
+  display: flex;
+  flex-direction: column;
+} */
+
+.addObject {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 10vh;
+}
+
+
+
+
+.Home-nav:hover, button:hover, #addHospitalRecord:hover {
+    background-color: #18c212 
+    
+}
+
+button, .Home-nav, #addHospitalRecord{
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
 .WavelengthsClass {
   display: flex;
   justify-content: center; 
@@ -107,6 +142,14 @@ table, th, td {
   height: 400px;
   padding-right: 15px;
 }
+
+
+.dischargeForm{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
 
 body {
   background-image: url("../medicalBackground.jpg");
