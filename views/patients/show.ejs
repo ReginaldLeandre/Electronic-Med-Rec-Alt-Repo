@@ -16,7 +16,8 @@
 </div>
 
 
-<h2>Vital Signs</h2>
+<h2 id="Vitals-Header">Vital Signs</h2> <div class="Vitals-divider"><a class="vitals_Link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a></div>
+<br>
 <div id="vitals-main-container">
     <div class="vitals-container">
         <p><strong>Date</strong></p>
@@ -72,8 +73,8 @@
         <% }) %>
 </div>
 
-<a class="vitals-link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a> 
-
+ 
+<br>
 <form class="dischargeForm" action="/patients/<%= patient._id %>?_method=PUT" method="POST" >
     <button>
         <%- (patient.discharged) ? "Readmit Patient" : "Discharge Patient" %>
