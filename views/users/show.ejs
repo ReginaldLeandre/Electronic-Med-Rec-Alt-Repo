@@ -5,10 +5,11 @@
 <div class="user-avatar"><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"></div>
 </div>
 
-
-<form action="/users/<%= user._id %>/edit" method="GET">
-  <button type="submit">Edit User</button>
-</form>
+<% if (user.admin) { %>
+  <form action="/users/<%= user._id %>/edit" method="GET">
+    <button type="submit">Edit User</button>
+  </form>
+<% } %>
 <br>
 
 <div id="user-show-grid">
@@ -32,7 +33,7 @@
       <thead>
         <tr>
           <th>Name:</th>
-          <th>Date of Birth:</th>
+          <th>Date of Birth (yyyy-mm-dd):</th>
           <th>Chief Complaint:</th>
           <th>ID:</th>
           <th></th>

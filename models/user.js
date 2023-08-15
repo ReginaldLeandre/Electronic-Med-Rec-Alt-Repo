@@ -9,7 +9,8 @@ const userSchema = new Schema( {
     },
     role: {
         type: String,
-        enum: ["Nurse Practitioner", "Registered Nurse", "Full-Stack Developer", "Physician", "Lab Technician", "Radiologist", "Clerk", "Other"]
+        enum: ["Nurse Practitioner", "Registered Nurse", "Full-Stack Developer", "Physician", "Lab Technician", "Radiologist", "Clerk", "Other"],
+        default: "Other"
         // consider making this enum
     }, 
     googleId: {
