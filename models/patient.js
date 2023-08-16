@@ -13,8 +13,19 @@ const progressNoteSchema = new Schema( {
     ap:  {
         type: String
     },
-},
-{
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true
+    },
+    time: {
+      type: Date,
+      default: returnDate()
+    },
+    userName: String,
+    userAvatar: String
+  },
+  {
     timestamps: true,
   }
 );
@@ -64,10 +75,6 @@ const vitalSchema = new Schema( {
   }
 );
 
-function returnDate() {
-  return new Date()
-}
-
 const patientSchema = new Schema( {
     name: {
       type: String,
@@ -102,5 +109,8 @@ const patientSchema = new Schema( {
     timestamps: true,
 })
 
+function returnDate() {
+  return new Date()
+}
 
 module.exports = mongoose.model("Patient", patientSchema);

@@ -502,3 +502,17 @@ a.Home-nav.active {
 .lineBreakText {
   white-space: pre-wrap;
 }
+
+.progress-note-author {
+  background-color: beige;
+  padding: 5px;
+  padding-left: 10px;
+  
+}
+
+.progress-note-author img {
+  margin-bottom: -4px;
+  height: 30px;
+  width: 30px;
+  display: inline;
+}
