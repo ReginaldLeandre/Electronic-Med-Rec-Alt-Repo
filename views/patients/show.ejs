@@ -56,6 +56,7 @@
         <p><strong>Temperature</strong></p>
         <br>
         <p></p>
+        <p></p>
         <div class="Vitals-divider"><a class="vitals_Link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a></div>
 
     </div>
@@ -93,12 +94,13 @@
                     class="abnormal-vitals"
                 <% } %>
                 ><%= v.temp %>°</p>
-                
-                <p>
+                <div class="flex-center-column-container">
+                    <img src="<%=v.userAvatar%>" class="avatar-image" alt="avatar" referrerpolicy="no-referrer">
+                    <p><%=v.userName%></p>
                     <form action="/patients/<%= patient._id %>/vitals/<%= v._id %>/?_method=DELETE" method="POST">
                         <button type="submit" class="delete-button">DELETE</button>
                     </form>
-                </p>
+                </div>
             </div>
         <% }) %>
 

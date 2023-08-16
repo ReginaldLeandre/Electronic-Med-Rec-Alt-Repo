@@ -29,7 +29,7 @@ async function createVitals(req, res, next) {
         newData = {...req.body}
         newData.user = req.user._id
         newData.userName = req.user.name
-        req.body.userAvatar = req.user.avatar
+        newData.userAvatar = req.user.avatar
         for (let key in newData) {
             if (newData[key] === "") delete newData[key]
         }
