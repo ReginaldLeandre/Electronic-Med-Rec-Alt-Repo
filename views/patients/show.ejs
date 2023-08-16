@@ -116,9 +116,6 @@
 
 <div id="progress-note-main-container">
 
-
-    <p><%= patient.progressNote.hpi %> <p>
-
     <div class="progress-note-container">
 
         <h3><strong>Subjective:</strong></h3>
@@ -127,13 +124,11 @@
             <p><%= patient.progressNote[0].objective %></p>
         <h3><strong>Assessment and Plan:</strong></h3>
             <p><%= patient.progressNote[0].ap %></p>
-    <br>
-    <br>
-
-    <div class="flex-center-container"><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-note/new">Add Progress Note</a></div>
-
+        <br>
+        <br>
     </div>
 
+    <div class="flex-center-container"><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-note/new">Add Progress Note</a></div>
 </div>
 
 
