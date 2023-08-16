@@ -14,6 +14,7 @@ h2, h3, h4 {
 
 a {
   color: #00B7FF;
+  padding-left: 10px;
 }
 
 table, th, td {

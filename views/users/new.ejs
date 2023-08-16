@@ -2,10 +2,11 @@
 
 
 <br>
-<form class="custom-forms" action="/users" method="POST" id="new-user-form">
+<form class="custom-form" action="/users" method="POST" id="new-user-form">
     <label>Name
         <input type="text" name="name">
     </label>
+    <br>
     <label>Role
             <select name="role">
                 <option selected disabled>Select User's Role</option>
@@ -14,9 +15,11 @@
                 <% }) %>
             </select>
     </label>
+    <br>
     <label> Admin privileges
         <input type="checkbox" name="admin">
     </label>
+    <br>
     <button type="submit">Add Provider</button>
 </form>
 
