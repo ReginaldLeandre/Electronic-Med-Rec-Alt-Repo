@@ -241,7 +241,10 @@ body {
   transition: background-color 0.3s ease-in-out;
 }
 
-
+a.Home-nav.active {
+  color: white;
+  background-color: #18c212; /* Color for active navigation links */
+}
 
 .login img {
   height: 25px;
