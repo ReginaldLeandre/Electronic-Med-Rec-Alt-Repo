@@ -12,7 +12,11 @@
     <h3>Medical History:</h3>
     <p><%= patient.medHx %></p>
     <h3>Healthcare Providers:</h3>
-    <p><%= providers %></p>
+    <div class="flex-left-container">
+        <% providers.forEach(function(provider) { %>
+            <p><a href="/patients/<%=provider._id%>"><%= provider.name %></a></p>
+        <% }) %>
+    </div>
 
     <h3></h3>
 
@@ -20,7 +24,7 @@
     <%  avatars.forEach(function(p) { %>
 
         <% if(p) {  %>
-        <p class="user-avatar-for-patient"><img alt="avatar" src="<%= p %>" referrerpolicy="no-referrer"></p>
+        <p class="flex-left-container"><img class="avatar-image" alt="avatar" src="<%= p %>" referrerpolicy="no-referrer"></p>
         <%  } %>
 
     <% }) %>

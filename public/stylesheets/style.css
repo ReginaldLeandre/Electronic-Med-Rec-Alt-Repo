@@ -108,7 +108,6 @@ table, th, td {
 #vitals-main-container {
   background-color: beige;
   display: flex;
-  flex-direction: row;
   height: 400px;
 }
 
@@ -326,11 +325,12 @@ body {
 }
 
 
-.user-avatar {
+/* .user-avatar {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
+
 
 .user-avatar-nav {
   display: inline;
@@ -347,23 +347,34 @@ body {
 
 .user-avatar-for-patient {
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: center;
+
 }
 
 
 
 .user-avatar-for-patient {
   display: inline
-
 }
 
-.user-avatar-for-patient img {
+.flex-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .user-avatar-for-patient img {
   border-radius: 50%;
   height: 60px;
 }
 
 .user-avatar img {
+  border-radius: 50%;
+  height: 60px;
+} */
+
+.avatar-image {
   border-radius: 50%;
   height: 60px;
 }
@@ -379,3 +390,8 @@ body {
   margin-bottom: 10px;
 }
 
+.flex-left-container {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
