@@ -130,4 +130,4 @@ async function assignAdmin(stringName) {
     process.exit()
 }
 
-// assignAdmin("William H")
+// assignAdmin("William Hu")
