@@ -114,10 +114,13 @@
 <h2 id="Progress-Note-Header">Latest Progress Note</h2>
 
 <% if (patient.progressNote.length) { %>
-    <p>Last updated: <%= patient.progressNote[0].time.toLocaleDateString() %> at <%= patient.progressNote[0].time.toLocaleTimeString() %></p>
-    <p>By:</p> 
-    <img src="<%=patient.progressNote[0].userAvatar %>" class="avatar-image" alt="avatar" referrerpolicy="no-referrer"> 
-    <a href="/users/<%= patient.progressNote[0].user %>"><p><%= patient.progressNote[0].userName %></p></a>
+    <div class="progress-note-author">
+        <p>Last updated: <%= patient.progressNote[0].time.toLocaleDateString() %> at <%= patient.progressNote[0].time.toLocaleTimeString() %> by</p>
+        <div class="flex-left-container">
+            <img src="<%=patient.progressNote[0].userAvatar %>" class="avatar-image" alt="avatar" referrerpolicy="no-referrer"> 
+            <a href="/users/<%= patient.progressNote[0].user %>"><p><%= patient.progressNote[0].userName %></p></a>
+        </div>
+    </div>
 
     <div id="progress-note-main-container">
         <div class="progress-note-container">
