@@ -15,7 +15,7 @@ async function newProgressNote (req, res, next) {
         const patient = await Patient.findById(req.params.patientId)
         // res.send(patient)
         res.render("progress-note/new", {
-            title: `Add progress note for: ${patient.name}`,
+            title: `New Progress Note: ${patient.name}`,
             patient
         })
     }catch(err) {

@@ -112,7 +112,9 @@
 <br>
 
 
-<h2 id="Progress-Note-Header">Progress Notes</h2> 
+<h2 id="Progress-Note-Header">Last Progress Note</h2> 
+
+<% if (patient.progressNote.length) { %>
 
 <div id="progress-note-main-container">
 
@@ -131,24 +133,23 @@
         <p class="lineBreakText"><%= patient.progressNote[0].ap %></p>
     </div>
 
-
+  
 </div>
+
+<div><a class="progress_note_link" href="/patients/<%= patient._id %>/all-progress-notes">See All Progress Notes</a></div>
+
+
+<% } else { %> <h4>No Patient Notes On File</h4> <% } %>
+
+
 <div><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-note/new">Add Progress Note</a></div>
 
 
-
-
-
-
 <br>
 <br>
 
 <br>
 <br>
-
-
-
-
 
 
 
