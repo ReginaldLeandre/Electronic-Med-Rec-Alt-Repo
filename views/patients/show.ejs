@@ -117,29 +117,35 @@
 <div id="progress-note-main-container">
 
     <div class="progress-note-container">
-
         <h3><strong>Subjective:</strong></h3>
-            <p><%= patient.progressNote[0].hpi %></p>
-        <h3><strong>Objective:</strong></h3>
-            <p><%= patient.progressNote[0].objective %></p>
-        <h3><strong>Assessment and Plan:</strong></h3>
-            <p><%= patient.progressNote[0].ap %></p>
-        <br>
-        <br>
+        <p class="lineBreakText"><%= patient.progressNote[0].hpi %></p>
     </div>
 
-    <div class="flex-center-container"><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-note/new">Add Progress Note</a></div>
+    <div class="progress-note-container">
+        <h3><strong>Objective:</strong></h3>
+        <p class="lineBreakText"><%= patient.progressNote[0].objective %></p>
+    </div>
+
+    <div class="progress-note-container">
+        <h3><strong>Assessment and Plan:</strong></h3>
+        <p class="lineBreakText"><%= patient.progressNote[0].ap %></p>
+    </div>
+
+
 </div>
+<div><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-note/new">Add Progress Note</a></div>
 
-
-
-<div>
 
 
 
 
 
 <br>
+<br>
+
+<br>
+<br>
+
 
 
 
