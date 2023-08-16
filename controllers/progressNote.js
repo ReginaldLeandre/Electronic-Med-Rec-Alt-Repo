@@ -29,10 +29,10 @@ async function createProgressNote (req, res, next) {
         const patient = await Patient.findById(req.params.patientId)
         newData = {...req.body}
 
+        newData.hpi = lineBreak(newData.hpi)
+        newData.objective = lineBreak(newData.objective)
         newData.ap = lineBreak(newData.ap)
-
-        console.log(newData.ap)
-
+    
         console.log("finding req.body ", newData)
         patient.progressNote.unshift(newData)
         await patient.save()

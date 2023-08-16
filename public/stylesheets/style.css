@@ -178,24 +178,39 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link, .progress_note_link {
 }
 
 #progress-note-main-container {
-  background-color: beige;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: beige;
+  padding: 10px;
+  height: fit-content;
+  overflow: auto;
+}
+
+
+.progress-note-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 15px;
   padding: 10px;
 }
 
+
+/* 
 .progress-note-container {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* height: 400px; */
   padding-right: 15px;
-  /* border: 1px solid black; */
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 4fr;
 }
+
+#progress-note-main-container {
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  padding: 10px;
+} */
 
 
 
