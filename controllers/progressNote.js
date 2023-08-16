@@ -1,6 +1,8 @@
 const Patient = require("../models/patient");
 const User = require("../models/user");
 
+const lineBreak = require("../config/lineBreaks.js");
+
 module.exports = {
     newProgressNote,
     createProgressNote,
@@ -26,6 +28,11 @@ async function createProgressNote (req, res, next) {
     try{
         const patient = await Patient.findById(req.params.patientId)
         newData = {...req.body}
+
+        newData.ap = lineBreak(newData.ap)
+
+        console.log(newData.ap)
+
         console.log("finding req.body ", newData)
         patient.progressNote.unshift(newData)
         await patient.save()

@@ -447,3 +447,7 @@ a.Home-nav.active {
   padding: 10px;
   border: 1px solid black;
 }
+
+.lineBreakText {
+  white-space: pre-wrap;
+}
