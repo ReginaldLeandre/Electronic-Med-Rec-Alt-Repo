@@ -293,11 +293,11 @@ body {
 }
 
 
-.user-avatar {
+/* .user-avatar {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* .user-avatar-for-patient {
   display: flex;
