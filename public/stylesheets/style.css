@@ -489,7 +489,7 @@ a.Home-nav.active {
   height: 30px;
 }
  
-.custom-form {
+/* .custom-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -497,7 +497,39 @@ a.Home-nav.active {
   background-color: beige;
   padding: 10px;
   border: 1px solid black;
+} */
+
+.custom-form-container {
+  background-color: beige;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
+
+.custom-form-3-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+}
+
+.custom-form-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+}
+/* .custom-form form {
+  display: table;
+}
+.custom-form p {
+  display: table-row;
+}
+.custom-form label {
+  display: table-cell;
+}
+.custom-form input {
+  display: table-cell;
+} */
 
 .lineBreakText {
   white-space: pre-wrap;

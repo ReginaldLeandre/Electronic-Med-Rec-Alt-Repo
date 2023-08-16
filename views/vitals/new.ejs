@@ -3,37 +3,37 @@
 
 <br>
 
-<form class="custom-form" action="/patients/<%= patient._id %>/vitals" method="POST" id="new-vitals-form">
+<div class="custom-form-container">
+    <form class="custom-form" action="/patients/<%= patient._id %>/vitals" method="POST" id="new-vitals-form">
+        
+        <h3>Heart rate:</h3>
+        <input type="number" name="heartRate" min="0"> 
+        <p>bpm</p>
 
-    <label>Heart rate:
-        <input type="number" name="heartRate" min="0"> bpm
-    </label>
-    <br>
-    <label>Systolic blood pressure:
-        <input type="number" name="systolic" min="0"> mmHg
-    </label>
-    <br>
-    <label>Diastolic blood pressure:
-        <input type="number" name="diastolic" min="0"> mmHg
-    </label>
-    <br>
-    <label>Respirations:
-        <input type="number" name="respirations" min="0"> /min
-    </label>
-    <br>
-    <label>O2 saturation:
-        <input type="number" name="oxygenSat" min="0" max="100"> %
-    </label>
-    <br>
-    <label>Temperature:
-        <input type="number" name="temp" min="0" step="any"> °C
-    </label>
-    <br>
-    <label>Time:
+        <h3>Systolic blood pressure:</h3>
+        <input type="number" name="systolic" min="0"> 
+        <p>mmHg</p>
+
+        <h3>Diastolic blood pressure:</h3>
+        <input type="number" name="diastolic" min="0">
+        <p>mmHg</p>
+
+        <h3>Respirations:</h3>
+        <input type="number" name="respirations" min="0">
+        <p>/min</p>
+
+        <h3>O2 saturation:</h3>
+        <input type="number" name="oxygenSat" min="0" max="100"> 
+        <p>%</p>
+
+        <h3>Temperature:</h3>
+        <input type="number" name="temp" min="0" step="any">
+        <p>°C</p>
+
+        <h3>Time:</h3>
         <input type="datetime-local" name="time" required>
-    </label>
-    <br>
+    </form>
     <button type="submit">Add Vital Signs</button>
-</form>
+</div>
 
 <%- include('../partials/footer') %>
