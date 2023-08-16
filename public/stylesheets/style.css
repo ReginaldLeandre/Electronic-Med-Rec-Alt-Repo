@@ -108,7 +108,9 @@ table, th, td {
 #vitals-main-container {
   background-color: beige;
   display: flex;
-  height: 400px;
+  /* height: 400px; */
+  /* padding: 10px; */
+
 }
 
 
@@ -123,14 +125,6 @@ table, th, td {
   justify-content: center;
   align-items: baseline;
   margin-top: 5vh;
-}
-
-
-.Vitals-divider{
-  display: flex;
-  /* justify-content:right; */
-  align-items: center;
-  
 }
 
 .Home-nav:hover, button:hover, #addHospitalRecord:hover, .login:hover, .vitals_Link:hover {
@@ -175,9 +169,10 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link{
 .vitals-container {
   display: flex;
   flex-direction: column;
-  height: 400px;
+  /* height: 400px; */
   padding-right: 15px;
   border: 1px solid black;
+  padding: 10px;
 }
 
 
@@ -406,4 +401,14 @@ body {
 .flex-center-column-container img {
   width: 30px;
   height: 30px;
+}
+ 
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  background-color: beige;
+  padding: 10px;
+  border: 1px solid black;
 }
