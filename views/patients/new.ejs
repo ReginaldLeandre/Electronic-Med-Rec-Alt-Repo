@@ -1,28 +1,23 @@
 <%- include('../partials/header') %>
-  <title>Add New Patient</title>
-</head>
-<body>
+<title>Add New Patient</title>
+
+<div class="custom-form-container">
+  <form class="custom-form-2-col" id="new-patient-form" action="/patients" method="post">
+  <h3>Name:</h3> 
+  <input type="text" id="name" name="name" required>
   
-  <form class="custom-form" id="new-patient-form" action="/patients" method="post">
-    <label for="name">Name: <input type="text" id="name" name="name" required></label>
-    <br>
+  <h3>Date of Birth:</h3>
+  <input type="date" id="DOB" name="DOB" required>
 
-    <label for="DOB">Date of Birth: <input type="date" id="DOB" name="DOB" required>
-    </label>
-    <br>
+  <h3>Chief Complaint: </h3>
+  <input type="text" id="chiefComplaint" name="chiefComplaint" required>
 
-    <label for="chiefComplaint">Chief Complaint: 
-        <input type="text" id="chiefComplaint" name="chiefComplaint" required>
-    </label>
-    <br>
-
-    <label for="medHx">Medical History: 
-        <input type="text" id="medHx" name="medHx">
-    </label>
-    <br>
-
-    <button type="submit">Add Patient</button>
+  <h3>Medical History: </h3>
+  <input type="text" id="medHx" name="medHx">
+  
   </form>
+<button type="submit">Add Patient</button>
+</div>
   
 
 

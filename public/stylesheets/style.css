@@ -139,10 +139,8 @@ table, th, td {
 button, .Home-nav, #addHospitalRecord, .vitals_Link {
 
   display: inline-block;
-
   display: flex;
   flex-direction: column;
-
   margin-left: 5px; 
   padding: 4px 8px;
   background-color: #3498db;
@@ -505,6 +503,7 @@ a.Home-nav.active {
   display: flex;
   flex-direction: column;
   padding: 10px;
+
 }
 
 .custom-form-3-col {
@@ -518,6 +517,7 @@ a.Home-nav.active {
   grid-template-columns: 1fr 2fr;
   padding: 10px;
 }
+
 /* .custom-form form {
   display: table;
 }
