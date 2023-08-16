@@ -16,22 +16,28 @@
                 PATIENTS </a>
             <a class="Home-nav" href="/users" <%- title === 'Providers' ? 'class="active"' : '' %>>
                 PROVIDERS</a>
-            <a class="Home-nav" href="/logout">LOG OUT</a>
+            <a class="Home-nav" href="/logout">LOG OUT <div class="user-avatar-nav"><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"></div></a>
 
         <% } else { %>
             <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
         <% } %>
     </nav>
 
-<div class="wavelength-gif">
-<img src="wavelength.gif">
+<div class="wavelength-container">
+    
+    <div class="wavelength-gif">
+        <img src="wavelength.gif">
+    </div>
+
+    <img class="wavelength-png" src="wavelength.png">
+
+
+    <section class="home-text">
+
+    <p>Welcome to the Wavelength: an EMR Project<br><br>We present a simple but highly functional electronic medical record system that could be implemented at a small urgent care center or emergency room. Our user experience is both provider- and patient-centric, creating a logical organizational structure that will help streamline workflow for providers and facilitate a more integrated care-delivery system for each patient.</p>
+
+    </section>
+
 </div>
-
-<section class="home-text">
-
-    <p>Welcome to the Wavelength: an EMR Project</p>
-
-</section>
-
 
 <%- include('./partials/footer') %>
