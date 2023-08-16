@@ -5,7 +5,7 @@ var router = express.Router();
 
 const vitalsCtrl = require('../controllers/vitals')
 
-const ensureLoggedIn = require('../config/ensureLoggedIn');
+const ensureLoggedIn = require('../config/ensure-logged-in');
 
 
 router.get("/patients/:patientId/vitals/new", ensureLoggedIn, vitalsCtrl.newVitals)

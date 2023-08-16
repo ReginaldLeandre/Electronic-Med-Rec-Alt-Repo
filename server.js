@@ -23,7 +23,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var patientsRouter = require('./routes/patients');
 var vitalsRouter = require('./routes/vitals');
-var progressNoteRouter = require('./routes/progressNote');
+var progressNoteRouter = require('./routes/progress-note');
 
 var app = express();
 

@@ -5,7 +5,7 @@ var router = express.Router();
 
 const patientsCtrl = require('../controllers/patients')
 
-const ensureLoggedIn = require('../config/ensureLoggedIn');
+const ensureLoggedIn = require('../config/ensure-logged-in');
 
 
 router.get('/', ensureLoggedIn, patientsCtrl.index)

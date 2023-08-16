@@ -2,9 +2,9 @@
 var express = require('express');
 var router = express.Router();
 
-const progressNoteCtrl = require('../controllers/progressNote')
+const progressNoteCtrl = require('../controllers/progress-notes')
 
-const ensureLoggedIn = require('../config/ensureLoggedIn');
+const ensureLoggedIn = require('../config/ensure-logged-in');
 
 
 router.get("/patients/:patientId/progress-note/new", ensureLoggedIn, progressNoteCtrl.newProgressNote)

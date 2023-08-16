@@ -3,7 +3,7 @@ var router = express.Router();
 
 const usersCtrl = require('../controllers/users')
 
-const ensureLoggedIn = require('../config/ensureLoggedIn');
+const ensureLoggedIn = require('../config/ensure-logged-in');
 
 
 router.get('/', ensureLoggedIn, usersCtrl.index)
