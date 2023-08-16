@@ -19,6 +19,7 @@ table a {
 
 table, th, td {
   border-collapse: collapse;
+  padding: 5px;
   /* display: flex;
   justify-content: center; 
   align-items: flex-start; */
