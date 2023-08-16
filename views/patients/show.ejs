@@ -55,9 +55,7 @@
         <p><strong>O2 Saturation</strong></p>
         <p><strong>Temperature</strong></p>
         <br>
-        <p></p>
-        <p></p>
-        <div class="Vitals-divider"><a class="vitals_Link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a></div>
+        <div class="Vitals-divider flex-center-container"><a class="vitals_Link" href="/patients/<%= patient._id %>/vitals/new">Add Vitals</a></div>
 
     </div>
         <% patient.vitals.forEach(function(v) { %>
