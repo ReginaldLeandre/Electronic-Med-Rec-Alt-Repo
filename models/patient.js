@@ -3,9 +3,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const hpiSchema = new Schema( {
-    hpi: String
-})
+const progressNoteSchema = new Schema( {
+    hpi:  {
+        type: String
+    },
+    objective:  {
+        type: String
+    },
+    ap:  {
+        type: String
+    },
+},
+{
+    timestamps: true,
+  }
+);
    
 
 
@@ -38,7 +50,14 @@ const vitalSchema = new Schema( {
     time: {
       type: Date,
       default: returnDate()
-    }
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true
+    },
+    userName: String,
+    userAvatar: String
   },
   {
     timestamps: true,
@@ -77,7 +96,7 @@ const patientSchema = new Schema( {
     admissionDates: {
       type: [Date],
     },
-    hpi: [hpiSchema],
+    progressNote: [progressNoteSchema],
 },
 {
     timestamps: true,

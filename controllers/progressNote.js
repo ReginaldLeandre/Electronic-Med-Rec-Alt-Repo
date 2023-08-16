@@ -2,18 +2,18 @@ const Patient = require("../models/patient");
 const User = require("../models/user");
 
 module.exports = {
-    newHpi,
-    createHpi,
+    newProgressNote,
+    createProgressNote,
     delete: deleteOne
 }
 
 
-async function newHpi (req, res, next) {
+async function newProgressNote (req, res, next) {
     try {
         const patient = await Patient.findById(req.params.patientId)
         // res.send(patient)
-        res.render("hpi/new", {
-            title: `Add hpi for: ${patient.name}`,
+        res.render("progress-note/new", {
+            title: `Add progress note for: ${patient.name}`,
             patient
         })
     }catch(err) {
@@ -22,12 +22,12 @@ async function newHpi (req, res, next) {
     }
 }
 
-async function createHpi (req, res, next) {
+async function createProgressNote (req, res, next) {
     try{
         const patient = await Patient.findById(req.params.patientId)
         newData = {...req.body}
         console.log("finding req.body ", newData)
-        patient.hpi.unshift(newData)
+        patient.progressNote.unshift(newData)
         await patient.save()
         res.redirect(`/patients/${patient._id}`)
     }catch(err) {

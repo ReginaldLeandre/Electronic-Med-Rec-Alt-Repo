@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+
+
+<br>
+
+<div class="custom-form">
+
+<form action="/patients/<%= patient._id %>/progress-note" method="POST" id="new-progress-note-form">
+    
+        Subjective<textarea class="progress-note" type="text" name="hpi"></textarea><br>
+
+        Objective<textarea class="progress-note" type="text" name="objective"></textarea><br>
+
+        Assessment and Plan<textarea class="progress-note" type="text" name="ap"></textarea><br>
+
+    <input type="submit" value="submit" />
+
+</form>
+
+</div>
+
+
+
+<%- include('../partials/footer') %>
+

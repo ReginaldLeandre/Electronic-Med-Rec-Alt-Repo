@@ -27,6 +27,12 @@ async function createVitals(req, res, next) {
         // console.log("creaing vitals")
         const patient = await Patient.findById(req.params.patientId)
         newData = {...req.body}
+        newData.user = req.user._id
+        newData.userName = req.user.name
+        newData.userAvatar = req.user.avatar
+        for (let key in newData) {
+            if (newData[key] === "") delete newData[key]
+        }
         patient.vitals.unshift(newData)
         await patient.save()
         res.redirect(`/patients/${patient._id}`)
@@ -48,3 +54,4 @@ async function deleteOne(req, res, next) {
         next(Error(err))
     }
 }
+

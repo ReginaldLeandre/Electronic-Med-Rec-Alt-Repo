@@ -10,7 +10,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 router.get("/patients/:patientId/vitals/new", ensureLoggedIn, vitalsCtrl.newVitals)
 
-router.post("/patients/:patientId", ensureLoggedIn, vitalsCtrl.createVitals)
+router.post("/patients/:patientId/vitals", ensureLoggedIn, vitalsCtrl.createVitals)
 
 router.delete("/patients/:patientId/vitals/:vitalId", ensureLoggedIn, vitalsCtrl.delete)
 
