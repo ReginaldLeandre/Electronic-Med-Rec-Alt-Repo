@@ -94,7 +94,7 @@
                 <% } %>
                 ><%= v.temp %>°</p>
                 <div class="flex-center-column-container">
-                    <img src="<%=v.userAvatar%>" class="avatar-image" alt="avatar" referrerpolicy="no-referrer">
+                    <img src="<%=v.userAvatar%>" class="avatar-image small-avatar" alt="avatar" referrerpolicy="no-referrer">
                     <p><a href="/users/<%=v.user%>"><%=v.userName%></a></p>
                     <% if (user?._id.equals(v.user)) { %>
                         <form action="/patients/<%= patient._id %>/vitals/<%= v._id %>/?_method=DELETE" method="POST">
@@ -121,7 +121,7 @@
         <p>Last updated: <%= patient.progressNote[0].time.toLocaleDateString() %> at <%= patient.progressNote[0].time.toLocaleTimeString() %> by</p>
 
         <div class="flex-left-container">
-            <img src="<%=patient.progressNote[0].userAvatar %>" class="avatar-image" alt="avatar" referrerpolicy="no-referrer"> 
+            <img src="<%=patient.progressNote[0].userAvatar %>" class="avatar-image small-avatar" alt="avatar" referrerpolicy="no-referrer"> 
             <a href="/users/<%= patient.progressNote[0].user %>"><p><%= patient.progressNote[0].userName %></p></a>
         </div>
 

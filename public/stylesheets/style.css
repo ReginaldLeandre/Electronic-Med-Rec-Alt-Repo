@@ -483,9 +483,16 @@ a.Home-nav.active {
   align-items: center;
 }
 
-.flex-center-column-container img {
+/* .flex-center-column-container img {
   width: 30px;
   height: 30px;
+} */
+
+.small-avatar {
+  margin-bottom: -4px;
+  height: 30px;
+  width: 30px;
+  display: inline;
 }
  
 /* .custom-form {
@@ -543,9 +550,9 @@ a.Home-nav.active {
   
 }
 
-.progress-note-author img {
+/* .progress-note-author img {
   margin-bottom: -4px;
   height: 30px;
   width: 30px;
   display: inline;
-}
+} */
