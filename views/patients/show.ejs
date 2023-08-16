@@ -95,7 +95,7 @@
                 ><%= v.temp %>°</p>
                 <div class="flex-center-column-container">
                     <img src="<%=v.userAvatar%>" class="avatar-image" alt="avatar" referrerpolicy="no-referrer">
-                    <p><%=v.userName%></p>
+                    <p><a href="/users/<%=v.user%>"><%=v.userName%></a></p>
                     <% if (user?._id.equals(v.user)) { %>
                         <form action="/patients/<%= patient._id %>/vitals/<%= v._id %>/?_method=DELETE" method="POST">
                             <button type="submit" class="delete-button">DELETE</button>
