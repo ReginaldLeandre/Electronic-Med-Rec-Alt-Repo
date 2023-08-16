@@ -3,6 +3,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
+const hpiSchema = new Schema( {
+    hpi: String
+})
+   
+
+
 const vitalSchema = new Schema( {
     heartRate: {
       type: Number,
@@ -70,7 +76,8 @@ const patientSchema = new Schema( {
     },
     admissionDates: {
       type: [Date],
-    }
+    },
+    hpi: [hpiSchema],
 },
 {
     timestamps: true,

@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+
 <div id="patients-show-grid">
     <h3>Name:</h3>
     <p><%= patient.name %></p>
@@ -102,13 +103,25 @@
             </div>
         <% }) %>
 
+
 </div>
 
 
 <br>
 
+<div id="hpi-main-container">
 
+    <div>
 
+        <% patient.hpi.forEach(function(h) { %>
+
+            <div>
+             <p><%= h.hpi %></p>
+            </div>
+            <% }) %>
+    </div>
+
+</div>
 
 
 <form class="dischargeForm" action="/patients/<%= patient._id %>?_method=PUT" method="POST" >

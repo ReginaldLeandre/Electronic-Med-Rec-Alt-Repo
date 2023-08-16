@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+
+
+<br>
+
+<form action="/patients/<%= patient._id %>/hpi" method="POST" id="new-hpi-form">
+    
+    <label>History of Present Illness:
+
+        <input class="hpi" type="text" name="hpi">
+
+        
+    </label>
+
+    <button type="submit">Submit HPI</button>
+
+</form>
+
+
+
+
+<%- include('../partials/footer') %>
+

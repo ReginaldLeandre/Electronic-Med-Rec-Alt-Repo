@@ -23,6 +23,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var patientsRouter = require('./routes/patients');
 var vitalsRouter = require('./routes/vitals');
+var hpiRouter = require('./routes/hpi');
 
 var app = express();
 
@@ -58,6 +59,7 @@ app.use(methodOverride("_method"))
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/", vitalsRouter)
+app.use("/", hpiRouter)
 app.use('/patients', patientsRouter);
 
 // catch 404 and forward to error handler
