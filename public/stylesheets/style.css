@@ -128,14 +128,15 @@ table, th, td {
   margin-top: 5vh;
 }
 
-.Home-nav:hover, button:hover, #addHospitalRecord:hover, .login:hover, .vitals_Link:hover {
+.Home-nav:hover, button:hover, #addHospitalRecord:hover, .login:hover, .vitals_Link:hover, .progress_note_link:hover {
     background-color: #18c212 
     
 }
-#Vitals-Header{
+
+#Vitals-Header, #Progress-Note-Header {
   padding-top: 10px;
 }
-button, .Home-nav, #addHospitalRecord, .vitals_Link{
+button, .Home-nav, #addHospitalRecord, .vitals_Link, .progress_note_link {
 
   display: inline-block;
 
@@ -174,6 +175,22 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link{
   padding-right: 15px;
   border: 1px solid black;
   padding: 10px;
+}
+
+
+.progress-note-container {
+  display: flex;
+  flex-direction: column;
+  /* height: 400px; */
+  padding-right: 15px;
+  /* border: 1px solid black; */
+  padding: 10px;
+
+}
+
+#progress-note-main-container {
+  background-color: beige;
+  display: flex;
 }
 
 
@@ -394,6 +411,14 @@ a.Home-nav.active {
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+
+.progress-note {
+
+  width: 400px;
+  height: 200px;
+
 }
 
 .flex-center-column-container {
