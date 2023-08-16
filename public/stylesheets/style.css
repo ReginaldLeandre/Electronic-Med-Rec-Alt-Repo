@@ -128,15 +128,15 @@ table, th, td {
   margin-top: 5vh;
 }
 
-.Home-nav:hover, button:hover, #addHospitalRecord:hover, .login:hover, .vitals_Link:hover, .progress_note_link:hover {
+.Home-nav:hover, button:hover, #addHospitalRecord:hover, .login:hover, .vitals_Link:hover, .progress_note_link:hover, .text-area-submit-button:hover {
     background-color: #18c212 
-    
 }
 
 #Vitals-Header, #Progress-Note-Header {
   padding-top: 10px;
 }
-button, .Home-nav, #addHospitalRecord, .vitals_Link, .progress_note_link {
+
+button, .Home-nav, #addHospitalRecord, .vitals_Link {
 
   display: inline-block;
 
@@ -154,6 +154,50 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link, .progress_note_link {
   text-decoration: none;
   font-size: 16px;
   transition: background-color 0.3s ease-in-out;
+}
+
+
+.progress_note_link {
+
+  display: inline-block;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 5px; 
+  margin-top: 7px;
+  padding: 4px 8px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+.text-area-submit-button {
+  display: inline-block;
+
+  width: 200px;
+
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 4px;
+
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+
 }
 
 
@@ -197,23 +241,6 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link, .progress_note_link {
   overflow: auto;
 }
 
-
-/* 
-.progress-note-container {
-  padding-right: 15px;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-}
-
-#progress-note-main-container {
-  background-color: beige;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  padding: 10px;
-} */
 
 
 
@@ -393,7 +420,6 @@ a.Home-nav.active {
 }
 
 
-
 .user-avatar-for-patient {
   display: inline
 } */
@@ -438,9 +464,16 @@ a.Home-nav.active {
 
 
 .progress-note {
+  width: 25vw;
+  height: 45vh;
+  padding: 10px;
+}
 
-  width: 400px;
-  height: 200px;
+#new-progress-note-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-evenly;
+  height: 60vh;
 
 }
 

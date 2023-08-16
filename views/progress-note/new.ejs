@@ -1,24 +1,28 @@
 <%- include('../partials/header') %>
 
 
-
 <br>
 
-<div class="custom-form">
 
-<form action="/patients/<%= patient._id %>/progress-note" method="POST" id="new-progress-note-form">
+<form class="custom-form" action="/patients/<%= patient._id %>/progress-note" method="POST" id="new-progress-note-form">
     
-        Subjective<textarea class="progress-note" type="text" name="hpi"></textarea><br>
 
-        Objective<textarea class="progress-note" type="text" name="objective"></textarea><br>
+    <div>
+        <h2>Subjective</h2><textarea class="progress-note" type="text" name="hpi"></textarea><br>
+    </div>
 
-        Assessment and Plan<textarea class="progress-note" type="text" name="ap"></textarea><br>
+    <div>
+        <h2>Objective</h2><textarea class="progress-note" type="text" name="objective"></textarea><br>
+    </div>
 
-    <input type="submit" value="submit" />
+    <div>
+        <h2>Assessment and Plan</h2><textarea class="progress-note" type="text" name="ap"></textarea><br>
+    </div>
+
+    <input class="text-area-submit-button" type="submit" value="Sign New Progress Note" />
 
 </form>
 
-</div>
 
 
 
