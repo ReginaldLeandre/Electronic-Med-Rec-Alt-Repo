@@ -515,7 +515,7 @@ a.Home-nav.active {
 
 .custom-form-2-col {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   padding: 10px;
 }
 /* .custom-form form {
