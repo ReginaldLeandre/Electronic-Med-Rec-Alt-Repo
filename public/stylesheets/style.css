@@ -302,21 +302,23 @@ body {
 
 .user-avatar-for-patient {
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: center;
-}
-
-.user-avatar-for-patient {
   display: inline
 
 }
 
-.user-avatar-for-patient img {
+/* .user-avatar-for-patient img {
   border-radius: 50%;
   height: 60px;
 }
 
 .user-avatar img {
+  border-radius: 50%;
+  height: 60px;
+} */
+
+.avatar-image {
   border-radius: 50%;
   height: 60px;
 }
@@ -332,3 +334,7 @@ body {
   margin-bottom: 10px;
 }
 
+.flex-left-container {
+  display: flex;
+  justify-content: flex-start;
+}

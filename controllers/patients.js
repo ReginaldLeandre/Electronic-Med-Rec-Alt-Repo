@@ -76,8 +76,8 @@ async function show (req, res, next) {
     try {
         const patient  = await Patient.findOne({_id: req.params.patientId}).populate("providers")
 
-        const providers = patient.providers.map(provider => (provider.name))
-
+        // const providers = patient.providers.map(provider => (provider.name))
+        const providers = patient.providers
         const avatars = patient.providers.map(provider => (provider.avatar))
 
         // res.send(patient)
