@@ -163,6 +163,7 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link{
 
 
 .Home-nav:last-of-type {
+  display: inline;
   margin-left: auto;
 }
 
@@ -261,27 +262,58 @@ body {
 .wavelength-gif {
   display: flex;
   justify-content: center;
-  margin-left: auto;
   padding-top: 20px;
   padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  align-items: center;
+  background-color: rgb(139, 197, 225)
+}
+
+.wavelength-png {
+  display: none;
+  /* display: flex; */
+  /* justify-content: center; */
+  width: auto;
+  height: 80px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  background-color: rgb(139, 197, 225)
+}
+
+.wavelength-container {
+  display: flex;
+  flex-direction: column;
   background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .home-text {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
+  height: 150px;
   background-color: white;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding-top: 0px;
+  padding-bottom: 10px;
   padding-left: 30px;
   padding-right: 30px;
-
 }
+
+
+@media (max-width: 690px) {
+  .wavelength-gif {
+    display: none;
+  }
+  .wavelength-png {
+    display: flex;
+  }
+  .home-text {
+    display: flex;
+    height: 220px;
+  }
+}
+
+
 
 #providers-view-container {
   display: flex;
@@ -300,11 +332,26 @@ body {
   align-items: center;
 }
 
+.user-avatar-nav {
+  display: inline;
+  align-items: center;
+}
+
+.user-avatar-nav img {
+  border-radius: 50%;
+  height: 22px;
+  margin-left: auto;
+  margin-bottom: -4px;
+}
+
+
 .user-avatar-for-patient {
   display: flex;
   justify-content: left;
   align-items: center;
 }
+
+
 
 .user-avatar-for-patient {
   display: inline
