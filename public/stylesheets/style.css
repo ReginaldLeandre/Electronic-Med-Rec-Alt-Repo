@@ -345,7 +345,7 @@ body {
 }
 
 
-.user-avatar-for-patient {
+/* .user-avatar-for-patient {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -356,7 +356,7 @@ body {
 
 .user-avatar-for-patient {
   display: inline
-}
+} */
 
 .flex-center-container {
   display: flex;
