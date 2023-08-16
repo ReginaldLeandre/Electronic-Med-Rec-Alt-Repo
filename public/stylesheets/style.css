@@ -108,7 +108,6 @@ table, th, td {
 #vitals-main-container {
   background-color: beige;
   display: flex;
-  flex-direction: row;
   height: 400px;
 }
 
@@ -300,12 +299,18 @@ body {
   align-items: center;
 }
 
-.user-avatar-for-patient {
+/* .user-avatar-for-patient {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   display: inline
 
+} */
+
+.flex-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* .user-avatar-for-patient img {
@@ -335,6 +340,7 @@ body {
 }
 
 .flex-left-container {
-  display: flex;
+  display: inline-flex;
   justify-content: flex-start;
+  align-items: center;
 }
