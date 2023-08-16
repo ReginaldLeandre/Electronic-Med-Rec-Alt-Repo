@@ -27,6 +27,9 @@ async function createVitals(req, res, next) {
         // console.log("creaing vitals")
         const patient = await Patient.findById(req.params.patientId)
         newData = {...req.body}
+        newData.user = req.user._id
+        newData.userName = req.user.name
+        req.body.userAvatar = req.user.avatar
         patient.vitals.unshift(newData)
         await patient.save()
         res.redirect(`/patients/${patient._id}`)
