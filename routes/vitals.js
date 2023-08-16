@@ -5,12 +5,14 @@ var router = express.Router();
 
 const vitalsCtrl = require('../controllers/vitals')
 
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-router.get("/patients/:patientId/vitals/new", vitalsCtrl.newVitals)
 
-router.post("/patients/:patientId", vitalsCtrl.createVitals)
+router.get("/patients/:patientId/vitals/new", ensureLoggedIn, vitalsCtrl.newVitals)
 
-router.delete("/patients/:patientId/vitals/:vitalId", vitalsCtrl.delete)
+router.post("/patients/:patientId", ensureLoggedIn, vitalsCtrl.createVitals)
+
+router.delete("/patients/:patientId/vitals/:vitalId", ensureLoggedIn, vitalsCtrl.delete)
 
 module.exports = router;
 

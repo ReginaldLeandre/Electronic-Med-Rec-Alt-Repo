@@ -5,15 +5,18 @@ var router = express.Router();
 
 const patientsCtrl = require('../controllers/patients')
 
-
-router.get('/', patientsCtrl.index)
-router.get('/new', patientsCtrl.new)
-router.post('/', patientsCtrl.create)
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 
+router.get('/', ensureLoggedIn, patientsCtrl.index)
 
-router.get("/:patientId", patientsCtrl.show)
-router.put('/:patientId', patientsCtrl.dischargeAdmit)
+router.get('/new', ensureLoggedIn, patientsCtrl.new)
+router.post('/', ensureLoggedIn, patientsCtrl.create)
+
+
+
+router.get("/:patientId", ensureLoggedIn, patientsCtrl.show)
+router.put('/:patientId', ensureLoggedIn, patientsCtrl.dischargeAdmit)
 
 
 module.exports = router;
