@@ -3,21 +3,23 @@ var router = express.Router();
 
 const usersCtrl = require('../controllers/users')
 
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
-router.get('/', usersCtrl.index)
 
-router.get('/new', usersCtrl.new)
+router.get('/', ensureLoggedIn, usersCtrl.index)
 
-router.post("/", usersCtrl.create)
+router.get('/new', ensureLoggedIn, usersCtrl.new)
 
-router.get("/:userId", usersCtrl.show)
+router.post("/", ensureLoggedIn, usersCtrl.create)
 
-router.post("/:userId", usersCtrl.addToProvider)
+router.get("/:userId", ensureLoggedIn, usersCtrl.show)
 
-router.put("/:userId", usersCtrl.removeFromProvider)
+router.post("/:userId", ensureLoggedIn, usersCtrl.addToProvider)
 
-router.get("/:userId/edit", usersCtrl.edit)
+router.put("/:userId", ensureLoggedIn, usersCtrl.removeFromProvider)
 
-router.put("/", usersCtrl.update)
+router.get("/:userId/edit", ensureLoggedIn, usersCtrl.edit)
+
+router.put("/", ensureLoggedIn, usersCtrl.update)
 
 module.exports = router;
