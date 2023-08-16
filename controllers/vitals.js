@@ -30,6 +30,9 @@ async function createVitals(req, res, next) {
         newData.user = req.user._id
         newData.userName = req.user.name
         req.body.userAvatar = req.user.avatar
+        for (let key in newData) {
+            if (newData[key] === "") delete newData[key]
+        }
         patient.vitals.unshift(newData)
         await patient.save()
         res.redirect(`/patients/${patient._id}`)
