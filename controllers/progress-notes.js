@@ -6,7 +6,8 @@ const lineBreak = require("../config/lineBreaks.js");
 module.exports = {
     newProgressNote,
     createProgressNote,
-    delete: deleteOne
+    delete: deleteOne,
+    index
 }
 
 
@@ -14,7 +15,7 @@ async function newProgressNote (req, res, next) {
     try {
         const patient = await Patient.findById(req.params.patientId)
         // res.send(patient)
-        res.render("progress-note/new", {
+        res.render("progress-notes/new", {
             title: `New Progress Note: ${patient.name}`,
             patient
         })
@@ -40,7 +41,7 @@ async function createProgressNote (req, res, next) {
         newData.objective = lineBreak(newData.objective)
         newData.ap = lineBreak(newData.ap)
         console.log("finding req.body ", newData)
-        patient.progressNote.unshift(newData)
+        patient.progressNotes.unshift(newData)
         await patient.save()
         res.redirect(`/patients/${patient._id}`)
     }catch(err) {
@@ -57,6 +58,20 @@ async function deleteOne (req, res, next) {
         patient.save()
         res.redirect(`/patients/${req.params.patientId}`)
     }catch(err) {
+        console.log(err)
+        next(Error(err))
+    }
+}
+
+async function index (req, res, next) {
+    try {
+        console.log("indexing progress notes")
+        const patient = await Patient.findById(req.params.patientId)
+        res.render("progress-notes/index", {
+            title: `${patient.name} - All Progress Notes`,
+            patient
+        })
+    } catch(err) {
         console.log(err)
         next(Error(err))
     }
