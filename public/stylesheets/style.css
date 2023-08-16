@@ -395,3 +395,15 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+
+.flex-center-column-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-column-container img {
+  width: 30px;
+  height: 30px;
+}

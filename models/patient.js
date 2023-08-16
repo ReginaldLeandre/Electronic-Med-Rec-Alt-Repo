@@ -32,7 +32,14 @@ const vitalSchema = new Schema( {
     time: {
       type: Date,
       default: returnDate()
-    }
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      required: true
+    },
+    userName: String,
+    userAvatar: String
   },
   {
     timestamps: true,
