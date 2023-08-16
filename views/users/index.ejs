@@ -13,7 +13,7 @@
       <tbody>
         <% users.forEach(function(u) { %>
           <tr>
-            <td><a href="/users/<%= u._id %>"><%= u.name %></td>
+            <td><img src="<%=u.avatar%>" class="avatar-image small-avatar" alt="avatar" referrerpolicy="no-referrer"><a href="/users/<%= u._id %>"><%= u.name %></a></td>
             <br>
             <td><%= u.role %></td>
             <% if (user.admin) { %>
