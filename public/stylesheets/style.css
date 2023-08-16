@@ -311,8 +311,6 @@ a.Home-nav.active {
   }
 }
 
-
-
 #providers-view-container {
   display: flex;
   background-color: beige;
@@ -323,6 +321,9 @@ a.Home-nav.active {
 
 }
 
+.providers-view-table {
+  background-color: beige;
+}
 
 /* .user-avatar {
   display: flex;
