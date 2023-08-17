@@ -165,11 +165,24 @@
 <br>
 <br>
 
+<% if (!patient.discharged) { %>
 
+<form class="dischargeForm" action="/patients/<%=patient._id %>/discharge-sum" method="GET" >
+    <button>Generate Discharge Summary (Powered by OpenAI)</button>
+</form>
+
+<% } %>
+
+
+<br>
 
 <form class="dischargeForm" action="/patients/<%= patient._id %>?_method=PUT" method="POST" >
     <button>
         <%- (patient.discharged) ? "Readmit Patient" : "Discharge Patient" %>
     </button>
 </form>
+
+
+
+
 <%- include('../partials/footer') %>

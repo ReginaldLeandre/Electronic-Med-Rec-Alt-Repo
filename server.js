@@ -16,7 +16,10 @@ require('./config/database');
 require('./config/passport');
 // added for auth
 
-const methodOverride = require("method-override")
+const methodOverride = require("method-override");
+
+
+var { Configuration, OpenAiApi } = require("openai");
 
 
 var indexRouter = require('./routes/index');
