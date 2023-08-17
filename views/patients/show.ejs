@@ -165,6 +165,23 @@
 <br>
 <br>
 
+<% if (!patient.discharged) { %>
+
+<form class="createDischargeSummary" action="/patients/<%= patient._id %>/discharge-sum/" method="GET" >
+    <button type="submit">Create Discharge Summary</button>
+</form>
+
+<% } %>
+
+
+<div id="progress-note-main-container">
+
+    <p> <%=  %> </p>
+    
+</div>
+
+
+
 
 
 <form class="dischargeForm" action="/patients/<%= patient._id %>?_method=PUT" method="POST" >
@@ -172,4 +189,8 @@
         <%- (patient.discharged) ? "Readmit Patient" : "Discharge Patient" %>
     </button>
 </form>
+
+
+
+
 <%- include('../partials/footer') %>

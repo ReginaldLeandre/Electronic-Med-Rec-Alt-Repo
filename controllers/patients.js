@@ -88,6 +88,8 @@ async function show (req, res, next) {
         const providers = patient.providers
         const avatars = patient.providers.map(provider => (provider.avatar))
 
+        // dischargeSum = await testChat(patient._id)
+
         // res.send(patient)
         // console.log(patient)
         res.render("patients/show", {
@@ -95,6 +97,7 @@ async function show (req, res, next) {
             patient,
             providers,
             avatars
+            // dischargeSum
         })
     }catch(err) {
         console.log(err)
@@ -122,8 +125,7 @@ async function dischargeAdmit (req, res, next) {
 }
 
 
-async function testChat () {
-
+async function testChat (res, req) {
 
 const openai = new OpenAiApi({
 
@@ -133,20 +135,13 @@ const openai = new OpenAiApi({
 
 
 
-//   const completion = await openai.chat.completions.create({
-//     messages: [{ role: 'user', content: 'Say this is a test' }],
-//     model: 'gpt-3.5-turbo',
-//   });
-
-//   console.log(completion.choices);
-
-
-
 try {
-    const patient = await Patient.findById("64dd53e3267858a732810191")
+    const patient = await Patient.findById(req.params.patientId)
     // const dischargeSummary = chatGPT.generateDS(patient)
     // req.send(dischargeSummary)
     // console.log(dischargeSummary)
+
+    console.log("generating discharge summary")
 
     let allNotes = ""
     function convert () {
@@ -155,7 +150,7 @@ try {
                 allNotes += note
             })
 
-            console.log(typeof(allNotes))
+            // console.log(typeof(allNotes))
             return allNotes
         // console.log(allNotes)
 
@@ -164,22 +159,20 @@ try {
     convert()
 
     const completion = await openai.chat.completions.create({
-      messages: [{ role: 'user', content: `write me a hospital discharge summary for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
+      messages: [{ role: 'user', content: `write me a hospital discharge summary that is well formatted with proper indentation for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
       model: 'gpt-3.5-turbo',
     });
   
     console.log(completion.choices[0].message.content);
-    return  completion.choices[0].message.content
+    // return  completion.choices[0].message.content
   
+    res.send(completion.choices[0].message.content)
+
   
 } catch(err) {
     console.log(err)
     // next(Error(err))
 }
 
-
-
-
 }
 
-testChat()
