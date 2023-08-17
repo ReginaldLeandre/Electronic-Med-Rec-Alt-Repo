@@ -1,7 +1,6 @@
 const Patient = require("../models/patient");
 const User = require("../models/user");
-
-const lineBreak = require("../config/lineBreaks.js");
+const lineBreak = require("../config/line-breaks.js");
 
 module.exports = {
     newProgressNote,

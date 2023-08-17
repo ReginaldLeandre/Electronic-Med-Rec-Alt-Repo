@@ -54,4 +54,3 @@ async function deleteOne(req, res, next) {
         next(Error(err))
     }
 }
-

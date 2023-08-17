@@ -11,7 +11,6 @@ const openai = new OpenAI({
 
 });
 
-
 async function main() {
   const completion = await openai.chat.completions.create({
     messages: [{ role: 'user', content: 'Say this is a test' }],

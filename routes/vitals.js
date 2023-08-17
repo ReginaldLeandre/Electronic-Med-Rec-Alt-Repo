@@ -2,9 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-
 const vitalsCtrl = require('../controllers/vitals')
-
 const ensureLoggedIn = require('../config/ensure-logged-in');
 
 
