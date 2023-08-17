@@ -8,19 +8,12 @@ var session = require('express-session');
 // added for auth
 var passport = require('passport');
 // added for auth
-
 require('dotenv').config();
-//
 require('./config/database');
-// 
 require('./config/passport');
 // added for auth
-
 const methodOverride = require("method-override");
-
-
 var { Configuration, OpenAiApi } = require("openai");
-
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

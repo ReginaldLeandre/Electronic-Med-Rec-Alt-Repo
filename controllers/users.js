@@ -12,7 +12,6 @@ module.exports = {
     update
 }
 
-
 async function index (req, res, next) {
     try {
         const results = await User.find({ }).sort("name");
@@ -25,25 +24,13 @@ async function index (req, res, next) {
 
 }
 
-
 async function show (req, res, next) {
     try {
-
-        // console.log("trying to find all Patients")
-
         const foundUser  = await User.findOne({_id: req.params.userId})
-
         const allPatientsAssigned = await Patient.find({ providers: foundUser._id }).sort("name")
-
         const allPatients = await Patient.find({  })
-
         const availableOptions = await Patient.find({providers: {$ne: foundUser._id}}).sort("name")
-
-        //
         const avatar = foundUser.avatar
-        //
-        
-        // console.log(user)
         res.render("users/show", {
             title: foundUser.name,
             foundUser,
@@ -51,7 +38,6 @@ async function show (req, res, next) {
             allPatients,
             availableOptions,
             avatar,
-            // user: req.user
         })
     }catch(err) {
         console.log(err)
@@ -65,14 +51,10 @@ function addUser (req, res, next) {
         title: "Add Provider",
         options
     } )
-    // not an async function
 }
 
 
 async function createUser(req, res, next) {
-
-    // can have a default googleid (if one otherwise not available by login) for the site admin (make email just for the app)
-
     console.log("creating new user")
     try {
         const newData = {...req.body}
@@ -87,56 +69,35 @@ async function createUser(req, res, next) {
 
 
 async function addToProvider (req, res, next) {
-
     console.log("trying to add patient to provider")
-
-        const providerId = req.params.userId
-
-        const patientId = req.body.patientId // patient data from the form select 
-        
-        try {
-            const foundPatient = await Patient.findById(patientId)
-
-            foundPatient.providers.push(providerId)
-
-            await foundPatient.save()
-
-            // console.log("try to find provider ID ", providerId)
-
-            res.redirect(`/users/${providerId}`)
-
-
-        }catch (err){
-            console.log(err)
-            res.redirect('/')
+    const providerId = req.params.userId
+    const patientId = req.body.patientId // patient data from the form select 
+    try {
+        const foundPatient = await Patient.findById(patientId)
+        foundPatient.providers.push(providerId)
+        await foundPatient.save()
+        res.redirect(`/users/${providerId}`)
+    }catch (err){
+        console.log(err)
+        res.redirect('/')
         }
     }
 
 
-    async function removeFromProvider (req, res, next) {
-
-        console.log("trying to remove patient from provider")
-    
-            const providerId = req.params.userId
-    
-            const patientId = req.body.patientId // patient data from the form select 
-
-            try {
-
-                const patient = await Patient.findById(patientId)
-
-                patient.providers.remove({_id: providerId})
-
-                await patient.save()
-    
-                res.redirect(`/users/${providerId}`)
-    
-
-            }catch (err){
-                console.log(err)
-                res.redirect('/')
-            }
-        }
+async function removeFromProvider (req, res, next) {
+    console.log("trying to remove patient from provider")
+    const providerId = req.params.userId
+    const patientId = req.body.patientId // patient data from the form select 
+    try {
+        const patient = await Patient.findById(patientId)
+        patient.providers.remove({_id: providerId})
+        await patient.save()
+        res.redirect(`/users/${providerId}`)
+    }catch (err){
+        console.log(err)
+        res.redirect('/')
+    }
+}
 
 async function edit(req, res, next) {
     const options = ["Nurse Practitioner", "Registered Nurse", "Full-Stack Developer", "Physician", "Lab Technician", "Radiologist", "Clerk", "Other"]

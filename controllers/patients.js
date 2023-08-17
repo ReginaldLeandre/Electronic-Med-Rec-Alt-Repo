@@ -4,7 +4,6 @@ const User = require("../models/user");
 const lineBreak = require("../config/line-breaks.js");
 var OpenAiApi = require("openai");
 
-
 module.exports = {
     index,
     new: addPatient,
@@ -13,7 +12,6 @@ module.exports = {
     dischargeAdmit,
     testChat: generateDS
 }
-
 
 async function index (req, res, next) {
 

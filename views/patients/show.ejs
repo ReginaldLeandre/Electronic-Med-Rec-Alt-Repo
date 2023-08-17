@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-
 <div id="patients-show-grid">
     <h3>Name:</h3>
     <p><%= patient.name %></p>
@@ -34,16 +33,13 @@
 
 </div>
 
-
 <div>
 
 </div>
 
-
 <h2 id="Vitals-Header">Vital Signs</h2> 
 
 <br>
-
 
 <div id="vitals-main-container">
 
@@ -105,12 +101,9 @@
             </div>
         <% }) %>
 
-
 </div>
 
-
 <br>
-
 
 <h2 id="Progress-Note-Header">Latest Progress Note</h2>
 
@@ -124,9 +117,7 @@
             <img src="<%=patient.progressNotes[0].userAvatar %>" class="avatar-image small-avatar" alt="avatar" referrerpolicy="no-referrer"> 
             <a href="/users/<%= patient.progressNotes[0].user %>"><p><%= patient.progressNotes[0].userName %></p></a>
         </div>
-
     </div>
-
 
     <div id="progress-note-main-container">
 
@@ -144,12 +135,8 @@
             <h3><strong>Assessment and Plan:</strong></h3>
             <p class="lineBreakText"><%= patient.progressNotes[0].ap %></p>
         </div>
-
     </div>
-
-
 </div>
-
 <div><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-notes">See All Progress Notes</a></div>
 
 
@@ -158,21 +145,16 @@
 
 <div><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-notes/new">Add Progress Note</a></div>
 
-
 <br>
 <br>
-
 <br>
 <br>
 
 <% if (!patient.discharged) { %>
-
 <form class="dischargeForm" action="/patients/<%=patient._id %>/discharge-sum" method="GET" >
     <button>Generate Discharge Summary (Powered by OpenAI)</button>
 </form>
-
 <% } %>
-
 
 <br>
 
@@ -181,8 +163,5 @@
         <%- (patient.discharged) ? "Readmit Patient" : "Discharge Patient" %>
     </button>
 </form>
-
-
-
 
 <%- include('../partials/footer') %>

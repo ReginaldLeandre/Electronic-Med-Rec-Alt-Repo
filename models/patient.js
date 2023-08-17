@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-
 const progressNoteSchema = new Schema( {
     hpi:  {
         type: String
@@ -30,8 +29,6 @@ const progressNoteSchema = new Schema( {
   }
 );
    
-
-
 const vitalSchema = new Schema( {
     heartRate: {
       type: Number,
