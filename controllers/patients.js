@@ -2,6 +2,10 @@ const { application } = require("express");
 const Patient = require("../models/patient");
 const User = require("../models/user");
 
+
+const lineBreak = require("../config/lineBreaks.js");
+
+
 // var { Configuration, OpenAiApi } = require("openai");
 
 var OpenAiApi = require("openai");
@@ -144,10 +148,13 @@ async function generateDS(req, res, next) {
             model: 'gpt-3.5-turbo',
           });
         const output = completion.choices[0].message.content
+
+        let formattedOutput = lineBreak(output)
+
         res.render("patients/discharge-summary",{
             title: `${patient.name}: Discharge Summary`,
             patient,
-            output
+            formattedOutput
         })
 
     }catch(err) {
