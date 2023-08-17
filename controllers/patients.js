@@ -144,7 +144,7 @@ async function generateDS(req, res, next) {
         }
         convert(patient.progressNotes)
         const completion = await openai.chat.completions.create({
-            messages: [{ role: 'user', content: `write me a hospital discharge summary for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
+            messages: [{ role: 'user', content: `write me a hospital discharge summary for a patient named ${patient.name} based on the following progress notes: ${allNotes}. Lookup the current date and current time and reference these values as time and date for discharge` }],
             model: 'gpt-3.5-turbo',
           });
         const output = completion.choices[0].message.content
