@@ -11,7 +11,7 @@
 
     -once the patient is admitted, the user will be able to view the patients facesheet by selecting the name of that patient from the index. 
 
-    -In the patient's facesheet, the user will be able to view that patients current assigned healthcare providers. the user can add vitals to the patient or delete an already added set of vitals from that patient's facesheet. This is also the location where the user can also discharge the patient. 
+    -In the patient's facesheet, the user will be able to view that patients current assigned healthcare providers. the user can add vitals to the patient or delete an already added set of vitals from that patient's facesheet. The patient's facesheet will also have progress notes so the user will be able to witness the last updated progress notes applied. The progress notes will be seperated into 3 sub-categories: Subjective; Objective; Assessment and Plan. The user can select "add progress note" so that the user will be able to add new set of progress notes or the user can view all progress notes which will take the user to a new page to see all associated progress notes. In the patient facesheet, the user can also discharge the patient. Upon discharging the patient you can automatically generate a discharge summary for the patient. This discharge summary is generated using OpenAiAPI.   
 
     -if the user uses the nav bar to navigate to the providers, they will be taken to the providers index. Here, base on the user's    
     administration status, the user will be able to see the list of all current users as well as add new users or edit current users
@@ -27,6 +27,38 @@
 
 
 
+# BRIEF SUMMARY
+This application is called Wavelength. It is a web application that serves as a simple yet highly functional electronic medical record (EMR) system suitable for implementation in small urgent care centers or emergency rooms. Our user experience is designed to be both provider- and patient-centric, creating a logical organizational structure that streamlines workflows for providers and facilitates a more integrated care-delivery system for each patient.
+
+# USER EXPERIENCE
+- Users are greeted by the application's introduction page. They can sign into the application using Google authentication.
+
+## App - Screenshots
+Home Page UI Logged out photo
+![Screenshot](public/Project Photos/Logged Out Home Page.png)
+
+
+Home Page UI Logged in photo
+![Screenshot](public/Project Photos/Logged In Home Page.png)
+
+- Depending on the user's administrative status, certain features will be available or unavailable.
+
+-The patient index page displays all patients recorded in the EMR system. Patients can be added from this page, where a form gathers required information for new admissions. Filtering options based on admission status (admitted or discharged) are available. Choosing "all patients" displays all patients regardless of admission status, with discharged patients shown in a light gray tint.
+## App - Screenshots
+
+Patient Index No Filter
+
+- After admitting a patient, users can access the patient's facesheet by selecting the patient's name from the index.
+
+- Within the patient's facesheet, users can view the patient's assigned healthcare providers, add vitals, or delete previously added vital sets. Progress notes are also visible, categorized into Subjective, Objective, and Assessment and Plan sections. Users can add new progress notes or view all existing ones. Discharging a patient generates a discharge summary using OpenAI API.
+
+- Navigating to the providers section in the navigation bar leads to the providers index. Depending on the user's administrative status, the list of all current users can be seen, and new users can be added or existing ones edited.
+
+- The "add users" section allows users to create new user profiles, with the option to grant administrative privileges.
+
+- In the "edit users" section, users can modify user details, including job titles and administrative status.
+
+- Clicking on a user/provider's name displays their profile. Within the profile, users can edit user details (equivalent to "edit user" in the provider index), unassign current patients, or assign new patients by using the dropdown and clicking "assign patient".
 
 
 
