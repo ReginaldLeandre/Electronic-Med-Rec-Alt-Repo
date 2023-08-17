@@ -167,19 +167,14 @@
 
 <% if (!patient.discharged) { %>
 
-<a href="/patients/<%=patient._id %>/discharge-sum">discharge summary</a>
+<form class="dischargeForm" action="/patients/<%=patient._id %>/discharge-sum" method="GET" >
+    <button>Generate Discharge Summary (Powered by OpenAI)</button>
+</form>
 
 <% } %>
 
-<div id="progress-note-main-container">
 
-    <p> <%=  %> </p>
-    
-</div>
-
-
-
-
+<br>
 
 <form class="dischargeForm" action="/patients/<%= patient._id %>?_method=PUT" method="POST" >
     <button>

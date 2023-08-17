@@ -391,11 +391,16 @@ a.Home-nav.active {
   background-color: beige;
 }
 
-/* .user-avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.beige-background {
+  background-color: beige;
+  padding: 10px;
+  margin: 10px;
+  height: 75vh;
+  width: 75vw;
+  overflow: auto;
+
+
+}
 
 
 .user-avatar-nav {
