@@ -1,12 +1,20 @@
+const { application } = require("express");
 const Patient = require("../models/patient");
 const User = require("../models/user");
+
+// var { Configuration, OpenAiApi } = require("openai");
+
+var OpenAiApi = require("openai");
+
 
 module.exports = {
     index,
     new: addPatient,
     create: createPatient,
     show,
-    dischargeAdmit
+    dischargeAdmit,
+
+    testChat
 }
 
 
@@ -114,3 +122,64 @@ async function dischargeAdmit (req, res, next) {
 }
 
 
+async function testChat () {
+
+
+const openai = new OpenAiApi({
+
+  apiKey: process.env.OPENAI_API_KEY,
+
+});
+
+
+
+//   const completion = await openai.chat.completions.create({
+//     messages: [{ role: 'user', content: 'Say this is a test' }],
+//     model: 'gpt-3.5-turbo',
+//   });
+
+//   console.log(completion.choices);
+
+
+
+try {
+    const patient = await Patient.findById("64dd53e3267858a732810191")
+    // const dischargeSummary = chatGPT.generateDS(patient)
+    // req.send(dischargeSummary)
+    // console.log(dischargeSummary)
+
+    let allNotes = ""
+    function convert () {
+      patient.progressNotes.forEach(function(note) {
+
+                allNotes += note
+            })
+
+            console.log(typeof(allNotes))
+            return allNotes
+        // console.log(allNotes)
+
+      }
+    
+    convert()
+
+    const completion = await openai.chat.completions.create({
+      messages: [{ role: 'user', content: `write me a hospital discharge summary for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
+      model: 'gpt-3.5-turbo',
+    });
+  
+    console.log(completion.choices[0].message.content);
+    return  completion.choices[0].message.content
+  
+  
+} catch(err) {
+    console.log(err)
+    // next(Error(err))
+}
+
+
+
+
+}
+
+testChat()
