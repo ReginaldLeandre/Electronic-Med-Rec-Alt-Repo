@@ -8,7 +8,6 @@ require('./database')
 const Patient = require("../models/patient");
 const User = require("../models/user");
 
-
 // false data
 const vitals1 = {
     heartRate: 80,
@@ -38,7 +37,6 @@ const patient2 = {
     discharged: true
 }
 
-
 const patient3 = {
     name: "Patient Test with provider",
     DOB: new Date(),
@@ -48,7 +46,6 @@ const patient3 = {
     providers: ["64da409988fbb708f00dd52a"]
 }
 
-
 const patient4 = {
     name: "Patient Test with two providers (named test and test2)",
     DOB: new Date(),
@@ -57,7 +54,6 @@ const patient4 = {
     discharged: false,
     providers: ["64da409988fbb708f00dd52a", "64da44c0569f5e942c2ebd6f"]
 }
-
 
 const user1 = {
     name: "Will",
@@ -103,8 +99,6 @@ async function deleteAllPatients() {
 
 // deleteAllPatients()
 
-
-
 async function deleteAllUsers() {
     try {
         await User.deleteMany({})
@@ -114,7 +108,6 @@ async function deleteAllUsers() {
     }
     process.exit()
 }
-
 
 // deleteAllUsers()
 
