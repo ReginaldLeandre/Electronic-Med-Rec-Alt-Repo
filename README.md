@@ -6,8 +6,13 @@
 
 ### Home Page
     -The user will be greeted by our application's intro page. From there, the user will be able to sign into our application using google authentication. 
-    
+
+Logged out photo
 ![Logged Out Home Page](https://github.com/william-hu-codes/electronic-medical-record/assets/96082623/4cb21eb0-cac7-409a-8f27-3e47530f81f2)
+
+Logged in photo
+![Logged In Home Page](https://github.com/william-hu-codes/electronic-medical-record/assets/96082623/b525b803-72cb-41ed-b836-2b535612c054)
+
 
     -Based on the user's administration status certain features will or will not be available to said user. 
 
