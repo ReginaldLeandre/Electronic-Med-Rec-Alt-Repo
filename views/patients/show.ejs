@@ -167,12 +167,9 @@
 
 <% if (!patient.discharged) { %>
 
-<form class="createDischargeSummary" action="/patients/<%= patient._id %>/discharge-sum/" method="GET" >
-    <button type="submit">Create Discharge Summary</button>
-</form>
+<a href="/patients/<%=patient._id %>/discharge-sum">discharge summary</a>
 
 <% } %>
-
 
 <div id="progress-note-main-container">
 

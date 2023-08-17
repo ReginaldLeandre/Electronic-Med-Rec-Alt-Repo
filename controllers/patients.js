@@ -13,8 +13,7 @@ module.exports = {
     create: createPatient,
     show,
     dischargeAdmit,
-
-    testChat
+    testChat: generateDS
 }
 
 
@@ -124,55 +123,90 @@ async function dischargeAdmit (req, res, next) {
     }
 }
 
-
-async function testChat (res, req) {
-
-const openai = new OpenAiApi({
-
-  apiKey: process.env.OPENAI_API_KEY,
-
-});
-
-
-
-try {
-    const patient = await Patient.findById(req.params.patientId)
-    // const dischargeSummary = chatGPT.generateDS(patient)
-    // req.send(dischargeSummary)
-    // console.log(dischargeSummary)
-
-    console.log("generating discharge summary")
-
-    let allNotes = ""
-    function convert () {
-      patient.progressNotes.forEach(function(note) {
-
-                allNotes += note
-            })
-
-            // console.log(typeof(allNotes))
-            return allNotes
-        // console.log(allNotes)
-
-      }
-    
-    convert()
-
-    const completion = await openai.chat.completions.create({
-      messages: [{ role: 'user', content: `write me a hospital discharge summary that is well formatted with proper indentation for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
-      model: 'gpt-3.5-turbo',
+async function generateDS(req, res, next) {
+    console.log("generating ds summary")
+    const openai = new OpenAiApi({
+        apiKey: process.env.OPENAI_API_KEY,
     });
-  
-    console.log(completion.choices[0].message.content);
-    // return  completion.choices[0].message.content
-  
-    res.send(completion.choices[0].message.content)
+    console.log("key loaded")
+    try {
+        let allNotes = ""
+        const patient = await Patient.findById(req.params.patientId)
+        console.log("found patient", patient)
+        function convert(array) {
+            array.forEach(function(element) {
+                allNotes +=  element
+            })
+        }
+        convert(patient.progressNotes)
+        const completion = await openai.chat.completions.create({
+            messages: [{ role: 'user', content: `write me a hospital discharge summary for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
+            model: 'gpt-3.5-turbo',
+          });
+        const output = completion.choices[0].message.content
+        res.render("patients/discharge-summary",{
+            title: `${patient.name}: Discharge Summary`,
+            patient,
+            output
+        })
 
-  
-} catch(err) {
-    console.log(err)
-    // next(Error(err))
+    }catch(err) {
+        console.log(err)
+        next(Error(err))
+    }
 }
 
-}
+
+
+// async function testChat (res, req) {
+//     console.log("generating")
+    
+//     const openai = new OpenAiApi({
+        
+//         apiKey: process.env.OPENAI_API_KEY,
+        
+//     });
+    
+//     try {
+//         const patient = await Patient.findOne({_id: req.params.patientId})
+//         console.log(patient)
+//     // const dischargeSummary = chatGPT.generateDS(patient)
+//     // req.send(dischargeSummary)
+//     // console.log(dischargeSummary)
+
+//     console.log("generating discharge summary")
+
+//     let allNotes = ""
+//     function convert () {
+//       patient.progressNotes.forEach(function(note) {
+
+//                 allNotes += note
+//             })
+
+//             // console.log(typeof(allNotes))
+//             return allNotes
+//         // console.log(allNotes)
+
+//       }
+    
+//     convert()
+
+    // const completion = await openai.chat.completions.create({
+    //   messages: [{ role: 'user', content: `write me a hospital discharge summary that is well formatted with proper indentation for a patient named ${patient.name} given the following progress notes: ${allNotes}` }],
+    //   model: 'gpt-3.5-turbo',
+    // });
+  
+//     console.log(completion.choices[0].message.content);
+//     req.json(completion.choices[0].message.content)
+//     // return  completion.choices[0].message.content
+
+//     // res.send(completion.choices[0].message.content)
+
+  
+// } catch(err) {
+//     console.log(err)
+//     // next(Error(err))
+// }
+
+// }
 

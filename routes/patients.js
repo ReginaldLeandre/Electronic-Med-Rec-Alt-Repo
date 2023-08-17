@@ -10,7 +10,7 @@ const ensureLoggedIn = require('../config/ensure-logged-in');
 
 router.get('/', ensureLoggedIn, patientsCtrl.index)
 
-router.get('/:patientId/discharge-sum/', ensureLoggedIn, patientsCtrl.testChat)
+router.get('/:patientId/discharge-sum', ensureLoggedIn, patientsCtrl.testChat)
 
 router.get('/new', ensureLoggedIn, patientsCtrl.new)
 router.post('/', ensureLoggedIn, patientsCtrl.create)
