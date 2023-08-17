@@ -2,11 +2,11 @@
 
 
 <div id="user-avatar-box">
-<div class="flex-center-container"><img class="avatar-image" alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"></div>
+<div class="flex-center-container"><img class="avatar-image" alt="avatar" src="<%= foundUser.avatar %>" referrerpolicy="no-referrer"></div>
 </div>
 
 <% if (user.admin) { %>
-  <form action="/users/<%= user._id %>/edit" method="GET">
+  <form action="/users/<%= foundUser._id %>/edit" method="GET">
     <button type="submit">Edit User</button>
   </form>
 <% } %>
@@ -15,9 +15,9 @@
 <div id="user-show-grid">
 
     <h3>Name:</h3>
-    <p><%= user.name %></p>
+    <p><%= foundUser.name %></p>
     <h3>Role:</h3>
-    <p><%= user.role %></p>
+    <p><%= foundUser.role %></p>
 
 </div>
 
@@ -46,7 +46,7 @@
           <td><a href="/patients/<%= p._id %>"><%= p.chiefComplaint %></a></td>
           <td><a href="/patients/<%= p._id %>"><%= p._id %></a></td>
           <td>
-            <form action="/users/<%=user._id%>/?_method=PUT" method="POST" id="unassign-patient-form">
+            <form action="/users/<%=foundUser._id%>/?_method=PUT" method="POST" id="unassign-patient-form">
               <input type="hidden" name="patientId" value="<%=p._id%>">
               <button type="submit">Unassign Patient</button>
             </form>
@@ -59,8 +59,8 @@
 
 <br>
 
-<h4>Select a patient to add to patient assignments for <%= user.name %>:</h4>
-<form method="POST" action="/users/<%=user._id%>">
+<h4>Select a patient to add to patient assignments for <%= foundUser.name %>:</h4>
+<form method="POST" action="/users/<%=foundUser._id%>">
   <select name="patientId">
     <% availableOptions.forEach(p =>{%>
     <option value="<%=p._id%>"><%= p.name %> | DOB:  <%= p.DOB.toLocaleDateString() %> | <%= p._id %></option>
