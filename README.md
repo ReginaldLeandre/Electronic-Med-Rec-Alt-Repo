@@ -3,6 +3,8 @@
 
 
 # USER-EXPERIENCE
+
+### Home Page
     -The user will be greeted by our application's intro page. From there, the user will be able to sign into our application using google authentication. 
 
     -Based on the user's administration status certain features will or will not be available to said user. 
