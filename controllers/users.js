@@ -31,26 +31,27 @@ async function show (req, res, next) {
 
         // console.log("trying to find all Patients")
 
-        const user  = await User.findOne({_id: req.params.userId})
+        const foundUser  = await User.findOne({_id: req.params.userId})
 
-        const allPatientsAssigned = await Patient.find({ providers: user._id }).sort("name")
+        const allPatientsAssigned = await Patient.find({ providers: foundUser._id }).sort("name")
 
         const allPatients = await Patient.find({  })
 
-        const availableOptions = await Patient.find({providers: {$ne: user._id}}).sort("name")
+        const availableOptions = await Patient.find({providers: {$ne: foundUser._id}}).sort("name")
 
         //
-        const avatar = user.avatar
+        const avatar = foundUser.avatar
         //
         
         // console.log(user)
         res.render("users/show", {
-            title: user.name,
-            user,
+            title: foundUser.name,
+            foundUser,
             patients: allPatientsAssigned,
             allPatients,
             availableOptions,
-            avatar
+            avatar,
+            // user: req.user
         })
     }catch(err) {
         console.log(err)
