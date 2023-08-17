@@ -15,7 +15,7 @@
     <h3>Healthcare Providers:</h3>
     <div class="flex-left-container">
         <% providers.forEach(function(provider) { %>
-            <p><a href="/users/<%=provider._id%>"><%= provider.name %></a></p>
+            <p><a href="/users/<%=provider._id%>"><%= provider.name %> (<%= provider.role %>)</a></p>
         <% }) %>
     </div>
 
@@ -94,8 +94,8 @@
                 <% } %>
                 ><%= v.temp %>°</p>
                 <div class="flex-center-column-container">
-                    <img src="<%=v.userAvatar%>" class="avatar-image" alt="avatar" referrerpolicy="no-referrer">
-                    <p><%=v.userName%></p>
+                    <img src="<%=v.userAvatar%>" class="avatar-image small-avatar" alt="avatar" referrerpolicy="no-referrer">
+                    <p><a href="/users/<%=v.user%>"><%=v.userName%></a></p>
                     <% if (user?._id.equals(v.user)) { %>
                         <form action="/patients/<%= patient._id %>/vitals/<%= v._id %>/?_method=DELETE" method="POST">
                             <button type="submit" class="delete-button">DELETE</button>
@@ -114,15 +114,15 @@
 
 <h2 id="Progress-Note-Header">Latest Progress Note</h2>
 
-<% if (patient.progressNote.length) { %>
+<% if (patient.progressNotes.length) { %>
 
     <div class="progress-note-author">
 
-        <p>Last updated: <%= patient.progressNote[0].time.toLocaleDateString() %> at <%= patient.progressNote[0].time.toLocaleTimeString() %> by</p>
+        <p>Last updated: <%= patient.progressNotes[0].time.toLocaleDateString() %> at <%= patient.progressNotes[0].time.toLocaleTimeString() %> by</p>
 
         <div class="flex-left-container">
-            <img src="<%=patient.progressNote[0].userAvatar %>" class="avatar-image" alt="avatar" referrerpolicy="no-referrer"> 
-            <a href="/users/<%= patient.progressNote[0].user %>"><p><%= patient.progressNote[0].userName %></p></a>
+            <img src="<%=patient.progressNotes[0].userAvatar %>" class="avatar-image small-avatar" alt="avatar" referrerpolicy="no-referrer"> 
+            <a href="/users/<%= patient.progressNotes[0].user %>"><p><%= patient.progressNotes[0].userName %></p></a>
         </div>
 
     </div>
@@ -132,17 +132,17 @@
 
         <div class="progress-note-container">
             <h3><strong>Subjective:</strong></h3>
-            <p class="lineBreakText"><%= patient.progressNote[0].hpi %></p>
+            <p class="lineBreakText"><%= patient.progressNotes[0].hpi %></p>
         </div>
 
         <div class="progress-note-container">
             <h3><strong>Objective:</strong></h3>
-            <p class="lineBreakText"><%= patient.progressNote[0].objective %></p>
+            <p class="lineBreakText"><%= patient.progressNotes[0].objective %></p>
         </div>
 
         <div class="progress-note-container">
             <h3><strong>Assessment and Plan:</strong></h3>
-            <p class="lineBreakText"><%= patient.progressNote[0].ap %></p>
+            <p class="lineBreakText"><%= patient.progressNotes[0].ap %></p>
         </div>
 
     </div>
@@ -150,13 +150,13 @@
 
 </div>
 
-<div><a class="progress_note_link" href="/patients/<%= patient._id %>/all-progress-notes">See All Progress Notes</a></div>
+<div><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-notes">See All Progress Notes</a></div>
 
 
 <% } else { %> <h4>No Patient Notes On File</h4> <% } %>
 
 
-<div><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-note/new">Add Progress Note</a></div>
+<div><a class="progress_note_link" href="/patients/<%= patient._id %>/progress-notes/new">Add Progress Note</a></div>
 
 
 <br>

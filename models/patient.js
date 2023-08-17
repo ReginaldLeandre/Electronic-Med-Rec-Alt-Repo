@@ -103,7 +103,7 @@ const patientSchema = new Schema( {
     admissionDates: {
       type: [Date],
     },
-    progressNote: [progressNoteSchema],
+    progressNotes: [progressNoteSchema],
 },
 {
     timestamps: true,

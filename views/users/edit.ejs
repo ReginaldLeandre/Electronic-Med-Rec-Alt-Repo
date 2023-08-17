@@ -1,11 +1,10 @@
 <%- include('../partials/header') %>
-<br>
-<form action="/users/?_method=PUT" method="POST" id="edit-user-form" class="custom-form">
-    <label>Name
+
+<div class="custom-form-container">
+    <form class="custom-form-2-col" action="/users/?_method=PUT" method="POST" id="edit-user-form" class="custom-form">
+        <h3>Name</h3>
         <input type="text" name="name" value="<%=user.name%>">
-    </label>
-    <br>
-    <label>Role
+        <h3>Role</h3>
         <select name="role">
             <% options.forEach(function(option) { %>
                 <option value="<%= option %>" 
@@ -14,14 +13,11 @@
                     > <%= option %></option>
             <% }) %>
         </select>
-    </label>
-    <br>
-    <label> Admin privileges
+        <h3>Admin privileges</h3>
         <input type="checkbox" name="admin" <%- (user.admin) ? "checked" : "" %>>
-    </label>
-    <br>
-    <input type="hidden" name="userId" value="<%= user._id %>">
-    <button type="submit">Update Provider</button>
-</form>
+        <input type="hidden" name="userId" value="<%= user._id %>">
+        <button type="submit">Update Provider</button>
+    </form>
+</div>
 
 <%- include('../partials/footer') %>

@@ -12,13 +12,14 @@ h2, h3, h4 {
 }
 
 
-a {
+table a {
   color: #00B7FF;
   padding-left: 10px;
 }
 
 table, th, td {
   border-collapse: collapse;
+  padding: 5px;
   /* display: flex;
   justify-content: center; 
   align-items: flex-start; */
@@ -139,10 +140,8 @@ table, th, td {
 button, .Home-nav, #addHospitalRecord, .vitals_Link {
 
   display: inline-block;
-
   display: flex;
   flex-direction: column;
-
   margin-left: 5px; 
   padding: 4px 8px;
   background-color: #3498db;
@@ -484,12 +483,19 @@ a.Home-nav.active {
   align-items: center;
 }
 
-.flex-center-column-container img {
+/* .flex-center-column-container img {
   width: 30px;
   height: 30px;
+} */
+
+.small-avatar {
+  margin-bottom: -4px;
+  height: 30px;
+  width: 30px;
+  display: inline;
 }
  
-.custom-form {
+/* .custom-form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -497,7 +503,41 @@ a.Home-nav.active {
   background-color: beige;
   padding: 10px;
   border: 1px solid black;
+} */
+
+.custom-form-container {
+  background-color: beige;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+
 }
+
+.custom-form-3-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+}
+
+.custom-form-2-col {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 10px;
+}
+
+/* .custom-form form {
+  display: table;
+}
+.custom-form p {
+  display: table-row;
+}
+.custom-form label {
+  display: table-cell;
+}
+.custom-form input {
+  display: table-cell;
+} */
 
 .lineBreakText {
   white-space: pre-wrap;
@@ -510,9 +550,9 @@ a.Home-nav.active {
   
 }
 
-.progress-note-author img {
+/* .progress-note-author img {
   margin-bottom: -4px;
   height: 30px;
   width: 30px;
   display: inline;
-}
+} */
