@@ -26,13 +26,17 @@
     
     <nav class="nav">
 
-        <a class="Home-nav" href="/" <%- title === 'Home' ? 'class="active"' : '' %>>HOME</a>
+        <a class="Home-nav" href="/" <%- title === 'Home' ? "class='active'" : '' %>>HOME</a>
         <% if (user) { %>
-            <a class="Home-nav" href="/patients"	<%- title === 'Patients' ? 'class="active"' : '' %>>
+            <a class="Home-nav" href="/patients"	<%- title === 'Patients' ? "class='active'" : '' %>>
                 PATIENTS</a>
-            <a class="Home-nav" href="/users" <%- title === 'Providers' ? 'class="active"' : '' %>>
+            <a class="Home-nav" href="/users" <%- title === 'Providers' ? "class='active'" : '' %>>
                 PROVIDERS</a>
-            <a class="Home-nav" href="/logout">LOG OUT <div class="user-avatar-nav"><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"></div></a>
+            <div class="nav-right-div">
+                <a class="Home-nav" id="my-profile" href="/users/<%= user._id %>" <%- title === 'My Profile' ? "class='active'" : '' %>>
+                    MY PROFILE</a>
+                <a class="Home-nav" href="/logout">LOG OUT <div class="user-avatar-nav"><img alt="avatar" src="<%= user.avatar %>" referrerpolicy="no-referrer"></div></a>
+            </div>
 
 
     
