@@ -24,6 +24,7 @@ table, th, td {
 .nav {
   display: flex;
   justify-content: flex-start;
+  align-content: center;
   margin: auto;
   background-color: beige;
   padding: 20px;
