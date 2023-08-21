@@ -44,6 +44,7 @@ table, th, td {
   margin-left: auto;
 }
 
+
 #footer {
   position: fixed;
   bottom: 0;
@@ -117,7 +118,7 @@ table, th, td {
 button, .Home-nav, #addHospitalRecord, .vitals_Link {
   display: inline-block;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   margin-left: 5px; 
   padding: 4px 8px;
   background-color: #3498db;
@@ -128,6 +129,8 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link {
   text-align: center;
   text-decoration: none;
   font-size: 16px;
+  justify-content: center;
+  align-content: center;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -166,8 +169,12 @@ button, .Home-nav, #addHospitalRecord, .vitals_Link {
   transition: background-color 0.3s ease-in-out;
 }
 
-.Home-nav:last-of-type {
-  display: inline;
+.nav-right-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  
+  align-content: center;
+  align-self: flex-end;
   margin-left: auto;
 }
 
